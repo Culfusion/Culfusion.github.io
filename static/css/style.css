@@ -1,0 +1,69 @@
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+}
+
+
+.gencenter {
+
+    margin: 0 auto;
+    position: relative;
+}
+
+.center {
+    height: auto;
+    margin: 0 auto;
+    padding: 30vh;
+    position: relative;
+}
+
+.templogobig {
+  height: 90px;
+  width: 200px;
+  margin: auto auto;
+  position: relative;
+
+}
+
+/* not in use */
+.newbtton{
+display: inline-block;
+width: 100;
+height: 60;
+                outline: 0;
+                border: 0;
+                cursor: pointer;
+                background: #f6f6f6;
+                color: #000000;
+                border-radius: 3px;
+                padding: 14px 24px;
+                font-size: 18px;
+                line-height: 1;
+                transition: transform 200ms,background 200ms;
+                :hover{
+                    transform: translateY(-10px);
+                }
+              }
+                
+.btn {
+  border-radius: 3px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid black;
+  padding: 14px 24px;
+  font-size: 18px;
+  background-size: 300%;
+  transition: all 0.6s;
+}
+
+
+.btn:hover {
+  background-position: 100%;
+  transform: translateY(0.5rem);
+}
+
+.btn:active {
+  scale: 1.2;
+}
