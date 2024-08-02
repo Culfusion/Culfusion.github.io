@@ -52,7 +52,7 @@ body, html {
 .center {
     height: auto;
     margin: 0 auto;
-    padding: 10vh;
+    padding: 15vh;
     position: relative;
 }
 
@@ -67,7 +67,7 @@ height: 100;
 object-fit: contain;
 }
 
-#imgcontainer {
+#logoimgcontainer {
    width: auto;
    height: auto;
    max-width: 550px;
@@ -77,9 +77,9 @@ object-fit: contain;
    position: relative;
 }
 
-#imgcontainer img {
+#logoimgcontainer img {
    width: 100%;
-   height: auto;
+   height: 100%;;
   object-fit: contain;
   text-align: center;
   margin: auto auto;
@@ -111,6 +111,22 @@ object-fit: contain;
   scale: 1.2;
 }
 
+
+.floating {  
+    animation-name: floating;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+ 
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 10px); }
+    100%   { transform: translate(0, -0px); }    
+}
+
 </style>
 </style>
 </head>
@@ -138,7 +154,7 @@ object-fit: contain;
 <div class="w3-container w3-black blackbgimg" style="min-height:100vh;" id="home">
   <div class="center" >
 
-    <div class="w3-center w3-container" id="imgcontainer">
+    <div class="w3-center w3-container floating" id="logoimgcontainer">
       <img src="/static/img/Logopartial.png">
     </div>
 
@@ -150,7 +166,9 @@ object-fit: contain;
     <p class="text24 w3-center w3-text-white">Whether you're just starting out or looking to scale your existing business, we're here to fuel your success.</p>
   
     <div class="w3-padding-top-24" style="text-align: center;">
+      <a href="https://www.instagram.com/culfusioncuisine/">
       <button class="btn">Get in touch with us</button>
+      </a>
     </div>
   
   </div>
