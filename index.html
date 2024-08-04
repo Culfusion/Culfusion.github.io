@@ -13,13 +13,7 @@
 
 <link rel="stylesheet" type="text/css" href="static/css/style.css">
 
-<script src="https://cdn.jsdelivr.net/npm/scrolly-video@latest/dist/scrolly-video.js"></script>
-<script type="text/javascript">
-  new ScrollyVideo({
-    scrollyVideoContainer: "scrolly-video",
-    src: "https://scrollyvideo.js.org/goldengate.mp4"
-  });
-</script>
+
 
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
@@ -151,6 +145,29 @@ object-fit: contain;
     100%   { transform: translate(0, -0px); }    
 }
 
+.flexcontainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flexitem {
+  flex: 1;
+  box-shadow: 0px 0px 5px 2px lightgrey;
+  width: 100;
+  height: 250;
+}
+
+.flexitem img {
+   width: 100%;
+   height: 100%;;
+  object-fit: contain;
+  text-align: center;
+  margin: auto auto;
+  position: relative;
+
+} 
+
+
 </style>
 </style>
 </head>
@@ -201,8 +218,43 @@ object-fit: contain;
 <!-- Services -->
 <div class="w3-container w3-white whitebgimg" style="min-height:100vh;" id="Services">
   <div class="center" >
-    <div id="scrolly-video"></div>
 
+    <div class="w3-row-padding w3-center w3-margin-top">
+
+      <div class="w3-third">
+          <img src="/static/img/cafe.png">
+        <p>Cafe</p>
+      </div>
+
+      <div class="w3-third">
+        <img src="/static/img/cafe.png">
+      <p>Cafe</p>
+    </div>
+
+    <div class="w3-third">
+      <img src="/static/img/cafe.png">
+    <p>Cafe</p>
+  </div>
+
+  <div class="w3-third">
+    <img src="/static/img/cafe.png">
+  <p>Cafe</p>
+</div>
+
+<div class="w3-third">
+  <img src="/static/img/cafe.png">
+<p>Cafe</p>
+</div>
+
+<div class="w3-third">
+  <img src="/static/img/cafe.png">
+<p>Cafe</p>
+</div>
+
+  
+
+
+      </div>
   
   </div>
 </div>
