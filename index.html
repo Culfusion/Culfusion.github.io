@@ -243,9 +243,22 @@ align-items: stretch;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
-align-items: stretch;
-height: 600px;
+align-items: center;
+height: 800px;
 width: 100%;
+}
+
+.founder-img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.founder-img-container {
+width: 40%;
+align-items: center;
+text-align: center;
+padding-bottom: 40%; /* This creates a 1:1 aspect ratio */
 }
 
 </style>
@@ -394,8 +407,8 @@ width: 100%;
 
           <p class="text24" style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh;"></pclass>A dynamic and innovative young founder with a strong foundation in the culinary industry, having successfully managed a diverse range of projects, from small businesses to chic chain restobars, showcasing a seamless blend of creativity and expertise.  </p>
 
-          <div class="w3-center w3-container" id="logoimgcontainer">
-            <img src="/static/img/Founderimg.jpg">
+          <div class="w3-center founder-img-container">
+            <img src="/static/img/Founderimg.jpg" class="founder-img w3-center">
           </div>
 
           <div class="w3-center w3-container" id="logoimgcontainer">
@@ -405,7 +418,7 @@ width: 100%;
           <div class="w3-padding-top-24" style="text-align: center;">
             <a href="https://www.instagram.com/santocooks/">
             <button class="btn">
-              <img src="/static/img/Insta Logo.png" width="25" height="25">
+              <img src="/static/img/Insta Logo.png" width="28" height="35">
               @santocooks
             </button>
             </a>
