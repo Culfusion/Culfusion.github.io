@@ -1,1113 +1,615 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Culfusion</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <!-- Updated to modern Google Fonts with better typography -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --background: #ffffff;
-            --foreground: #1a1a1a;
-            --card: #ffffff;
-            --card-foreground: #1a1a1a;
-            --primary: #dc2626;
-            --primary-foreground: #ffffff;
-            --secondary: #f97316;
-            --secondary-foreground: #ffffff;
-            --muted: #fafafa;
-            --muted-foreground: #6b7280;
-            --accent: #fbbf24;
-            --accent-foreground: #1a1a1a;
-            --border: #e5e7eb;
-            --input: #ffffff;
-            --ring: rgba(220, 38, 38, 0.1);
-            --radius: 12px;
-            /* Added modern shadow variables */
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WT3BSGK681"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-        /* Modern typography system */
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--foreground);
-            background-color: var(--background);
-            line-height: 1.6;
-            font-weight: 400;
-            letter-spacing: -0.01em;
-        }
+  gtag('config', 'G-WT3BSGK681');
+</script>
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-        }
+<link rel="icon" type="image/png" href="/static/img/favicon.png"/> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Culfusion</title>
 
-        /* Modern hero with subtle gradient and better spacing */
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: var(--primary-foreground);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.1);
-            z-index: 1;
-        }
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        .hero-section .w3-container {
-            position: relative;
-            z-index: 2;
-        }
+<link rel="stylesheet" type="text/css" href="static/css/style.css">
 
-        /* Modern card design with subtle shadows and better spacing */
-        .service-card {
-            background-color: var(--card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            box-shadow: var(--shadow-sm);
-            overflow: hidden;
-        }
+<style>
+  
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--primary);
-        }
-
-        .project-card {
-            background-color: var(--card);
-            border-radius: var(--radius);
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            box-shadow: var(--shadow-md);
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .testimonial-card {
-            background-color: var(--card);
-            border-left: 4px solid var(--primary);
-            border-radius: var(--radius);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-2px);
-        }
-
-        /* Modern button design with better typography and spacing */
-        .btn-primary {
-            background-color: var(--primary);
-            color: var(--primary-foreground);
-            border: none;
-            border-radius: var(--radius);
-            padding: 16px 32px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: var(--shadow-sm);
-            letter-spacing: -0.01em;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--secondary);
-            color: var(--secondary-foreground);
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-1px);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--primary-foreground);
-            border: 2px solid var(--primary-foreground);
-            border-radius: var(--radius);
-            padding: 14px 30px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            letter-spacing: -0.01em;
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--primary-foreground);
-            color: var(--primary);
-            transform: translateY(-1px);
-        }
-
-        /* Modern section titles with better typography */
-        .section-title {
-            color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 3rem;
-            font-size: 3.5rem;
-            text-align: center;
-        }
-
-        /* Modern navbar with backdrop blur effect */
-        .navbar {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: var(--shadow-sm);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .navbar a {
-            color: var(--foreground);
-            font-weight: 500;
-            transition: all 0.3s ease;
-            font-size: 15px;
-            letter-spacing: -0.01em;
-        }
-
-        .navbar a:hover {
-            color: var(--primary);
-            background-color: rgba(220, 38, 38, 0.05);
-        }
-
-        /* Modern form styling */
-        .contact-form input, .contact-form textarea, .contact-form select {
-            background-color: var(--input);
-            border: 2px solid var(--border);
-            border-radius: var(--radius);
-            padding: 16px;
-            width: 100%;
-            margin-bottom: 1.5rem;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px var(--ring);
-        }
-
-        /* Modern stats section */
-        .stats-section {
-            background: linear-gradient(135deg, var(--muted) 0%, #f8fafc 100%);
-        }
-
-        .stat-number {
-            color: var(--primary);
-            font-size: 4rem;
-            font-weight: 700;
-            font-family: 'Inter', sans-serif;
-            line-height: 1;
-        }
-
-        /* Modern footer */
-        .footer {
-            background: linear-gradient(135deg, var(--primary) 0%, #b91c1c 100%);
-            color: var(--primary-foreground);
-        }
-
-        .social-icon {
-            color: var(--primary-foreground);
-            font-size: 1.5rem;
-            margin: 0 12px;
-            transition: all 0.3s ease;
-            padding: 8px;
-            border-radius: 50%;
-        }
-
-        .social-icon:hover {
-            color: var(--accent);
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        /* Improved spacing and alignment */
-        .w3-row-padding .w3-col {
-            display: flex;
-        }
-
-        .service-card .w3-padding-large,
-        .project-card .w3-padding,
-        .testimonial-card .w3-padding-large {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            padding: 2rem;
-        }
-
-        .service-card ul,
-        .project-card .w3-margin-top {
-            margin-top: auto;
-        }
-
-        /* Modern icon styling */
-        .fas {
-            color: var(--primary);
-        }
-
-        .service-card .fas {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
-        }
-
-        .w3-tag.w3-green {
-            background-color: var(--secondary) !important;
-            color: var(--secondary-foreground) !important;
-            border-radius: 20px;
-            padding: 6px 12px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-
-        .w3-text-green {
-            color: var(--primary) !important;
-        }
-
-        /* Modern spacing improvements */
-        .w3-padding-64 {
-            padding-top: 5rem !important;
-            padding-bottom: 5rem !important;
-        }
-
-        .w3-padding-32 {
-            padding-top: 3rem !important;
-            padding-bottom: 3rem !important;
-        }
-
-        /* Better responsive typography */
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 2.5rem;
-            }
-            
-            .stat-number {
-                font-size: 3rem;
-            }
-            
-            .hero-section h1 {
-                font-size: 3rem;
-            }
-        }
-
-        .centered-nav-items {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+body, html {
+height: 100%;
 }
 
-.navbar {
-    /* Existing W3.CSS styles */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Fonts */
+@font-face {
+font-family: 'jamal'; 
+src: url('static/font/Jamel.otf');
 }
-    </style>
+
+@font-face {
+font-family: 'cormorant'; 
+src: url('static/font/CormorantInfant-Regular.ttf');
+}
+
+.largetext70 {
+font-family: "jamal";
+font-size: 4vw;
+text-align: center;
+}
+
+.text24 {
+font-family: "cormorant";
+font-size: 1.25vw;
+text-align: center;
+}
+
+.center {
+height: auto;
+margin: 0 auto;
+padding: 12vh;
+position: relative;
+}
+
+.blackbgimg{
+background-image: url('static/img/Black BG small.png');
+background-repeat: repeat;
+}
+
+.whitebgimg{
+background-image: url('static/img/White BG small.png');
+background-repeat: repeat;
+}
+
+.barimglogo {
+width: 250;
+height: 100;
+object-fit: contain;
+}
+
+#logoimgcontainer {
+width: auto;
+height: auto;
+max-width: 550px;
+min-height: 175px;
+text-align: center;
+margin: auto auto;
+position: relative;
+}
+
+#logoimgcontainer img {
+width: 100%;
+height: 100%;
+object-fit: contain;
+text-align: center;
+margin: auto auto;
+position: relative;
+
+} 
+
+#topbarimgcontainer {
+width: auto;
+height: auto;
+max-width: 55px;
+min-height: 55px;
+padding: 3px;
+text-align: center;
+margin: auto auto;
+position: relative;
+}
+
+#topbarimgcontainer img {
+width: 100%;
+height: 100%;
+object-fit: contain;
+text-align: center;
+margin: auto auto;
+position: relative;
+
+} 
+           
+.btn {
+border-radius: 3px;
+position: relative;
+align-items: center;
+justify-content: center;
+border: 1.5px solid black;
+padding: 14px 24px;
+font-size: 18px;
+background-size: 300%;
+transition: all 0.6s;
+}
+
+.btn:hover {
+background-position: 100%;
+transform: translateY(0.5rem);
+}
+
+.btn:active {
+scale: 1.2;
+}
+
+.floating {  
+animation-name: floating;
+animation-duration: 5s;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+margin-left: 30px;
+margin-top: 5px;
+}
+ 
+@keyframes floating {
+0% { transform: translate(0,  0px); }
+50%  { transform: translate(0, 5px) scale(1.01); }
+100%   { transform: translate(0, -0px); }    
+}
+
+
+.flexcontainer {
+display: flex;
+justify-content: space-between;
+}
+
+.flexitem {
+flex: 1;
+margin: 0px 15px;
+width: 16.66%;
+min-height:320px;
+}
+
+
+.flexitem img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+margin: 0;
+box-shadow: none;
+} 
+
+.flexitemlong {
+flex: 1;
+margin: 0px 15px;
+width: 70%;
+}
+
+.flexitemlongimgdiv {
+flex: 1;
+margin: 0px 15px;
+width: 30%;
+} 
+
+.flexitemlongimgdiv img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+margin: 0;
+box-shadow: none;
+} 
+
+.longcard {
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+transition: 0.3s;
+width: 40%;
+display: flex;
+flex-direction: row-reverse;
+overflow: hidden;
+}
+
+.longcontainer {
+padding: 4px 32px;
+width: 500px;
+flex: 1;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+
+.longcontainer2 {
+padding: 2px 16px;
+flex: 1;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+text-align: center;
+flex-wrap: wrap;
+gap: 20px 50px;
+}
+
+.image-container {
+flex: 1;
+}
+.image-container img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.divider {
+  width: 2px;
+  background-color: #ffffff;
+  margin: 0 20px;
+}
+
+.servicecontainer1 {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: stretch;
+padding-right: 2.5%;
+padding-left: 2.5%;
+}
+
+.servicecontainer2 {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+height: 800px;
+width: 100%;
+}
+
+.founder-img {
+width: 40%;
+height: 100%;
+object-fit: cover;
+background-color: #ffffff;
+padding: 2px;
+}
+
+.founder-img-container {
+width: 100%;
+align-items: center;
+text-align: center;
+padding-bottom: 5%;
+}
+
+.santo-logo-img {
+align-items: center;
+text-align: center;
+object-fit: cover;
+
+}
+
+/*--- General Mobile Styles ---*/
+
+/* This meta tag is already in your HTML but is crucial for mobile responsiveness. It tells the browser to set the viewport width to the device's screen width and not to scale it. */
+@media screen and (max-width: 768px) {
+
+/* Changes font sizes to be a fixed size instead of viewport units, making them readable on smaller screens. */
+.largetext70 {
+  font-size: 3rem !important; /* using !important to override the inline style */
+}
+
+.text24 {
+  font-size: 1rem !important;
+}
+
+/* Adjusts padding for mobile screens to give more vertical space and less horizontal. */
+.center {
+  padding: 10vh 5vw;
+}
+
+/*--- Navbar adjustments for mobile ---*/
+
+.w3-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.w3-top a {
+  font-size: 1.5rem !important;
+}
+
+/* Hides the logo in the navbar on mobile to save space. */
+#topbarimgcontainer {
+  display: none;
+}
+
+/*--- Main Homepage (Homepage) section ---*/
+
+#logoimgcontainer img {
+  max-width: 20rem;
+  min-height: 5rem;
+}
+
+/* Adjusts the "Get in touch" button for mobile screens. */
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+/*--- What we do (Services) section ---*/
+
+/* Changes the flexbox layout to stack items vertically on mobile. */
+.flexcontainer {
+  flex-direction: column;
+  gap: 20px; /* Adds space between the stacked items */
+}
+
+.flexitem {
+  min-height: auto;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.longcontainer2 {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.longcard {
+  flex-direction: column; /* Stacks image and text vertically */
+  width: 90%;
+  margin: 0 auto;
+}
+
+.longcontainer {
+  width: 100%;
+  padding: 16px;
+}
+
+/* reverses the order for the second catering card to stack logically */
+.longcard:nth-child(2) {
+  flex-direction: column-reverse;
+}
+
+/*--- Who we are (About) section ---*/
+
+/* Stacks the two columns vertically on mobile and hides the divider. */
+.servicecontainer1 {
+  flex-direction: column;
+  padding: 0;
+}
+
+.divider {
+  display: none;
+}
+
+.servicecontainer2 {
+  height: auto;
+  margin-bottom: 30px; /* Adds space between the two sections */
+}
+
+.founder-img-container {
+  padding-bottom: 20px;
+}
+
+.founder-img {
+  width: 80%;
+}
+
+.santo-logo-img {
+  width: 80%;
+}
+}
+
+
+.w3-card {
+  transition: transform 0.3s ease, box-shadow 0.5s ease;
+}
+
+.w3-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
+}
+</style>
+</style>
+
 </head>
 <body>
 
-<!-- Navigation -->
-<nav class="w3-bar w3-card w3-left-align w3-large navbar" style="position: fixed; top: 0; z-index: 1000;">
-  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-  <a href="#home" class="w3-bar-item w3-button w3-padding-large">Sarah Martinez</a>
-  <div class="centered-nav-items">
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-center w3-white w3-padding-small" id="myNavbar">
 
-      <a href="#about" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
-      <a href="#services" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Services</a>
-      <a href="#projects" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Projects</a>
-      <a href="#testimonials" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Testimonials</a>
-      <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
+      <a href="#Services" class=" w3-button text24" style="font-size: 2vh;">What we do</a>
+
+    <div class="w3-button" id="topbarimgcontainer">
+      <a href="#home">
+      <img src="static/img/Logo.png" >
+    </a>
+    </div>
+
+      <a href="#About" class=" w3-button text24" style="font-size: 2vh;">Who we are</a>
+
   </div>
-</nav>
-
-<!-- Mobile Navigation -->
-<div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">About</a>
-    <a href="#services" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Services</a>
-    <a href="#projects" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Projects</a>
-    <a href="#testimonials" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Testimonials</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contact</a>
 </div>
 
-<!-- Hero Section -->
-<section id="home" class="hero-section">
-    <div class="w3-container w3-center">
-        <div class="w3-content" style="max-width:900px">
-            <!-- Improved hero typography and spacing -->
-            <h1 class="w3-jumbo w3-margin-bottom" style="font-size: 4.5rem; font-weight: 700;">Sarah Martinez</h1>
-            <h2 class="w3-xlarge w3-margin-bottom" style="font-size: 1.5rem; font-weight: 400; opacity: 0.95;">Food Consultant & Culinary Expert</h2>
-            <p class="w3-large w3-margin-bottom" style="font-size: 1.25rem; max-width: 600px; margin: 0 auto 2rem; opacity: 0.9; line-height: 1.6;">Transforming food businesses through innovative strategies, sustainable practices, and culinary excellence. With over 15 years of experience in the food industry.</p>
-            <div class="w3-margin-top" style="margin-top: 3rem;">
-                <button class="btn-primary w3-margin-right" onclick="document.getElementById('services').scrollIntoView()">
-                    <i class="fas fa-utensils w3-margin-right"></i>View Services
-                </button>
-                <button class="btn-secondary" onclick="document.getElementById('contact').scrollIntoView()">
-                    <i class="fas fa-phone w3-margin-right"></i>Get In Touch
-                </button>
-            </div>
+<!-- Homepage -->
+<div class="w3-container w3-black blackbgimg" style="min-height:100vh;" id="home">
+  <div class="center" >
+
+    <div class="w3-center flexcontainer floating" id="logoimgcontainer">
+      <img src="static/img/Logopartial.png">
+    </div>
+
+    <h2 class="w3-center largetext70 w3-text-white" style="font-size: 6vh;">Culinary x  fusion</h2>
+    <h2 class="w3-center largetext70 w3-text-white" style="font-size: 6vh;">Where experiences are built through</h2>
+    <h2 class="w3-center largetext70 w3-text-white" style="font-size: 6vh;">taste + texture + innovation</h2>
+
+    <p class="text24 w3-center w3-text-white">Are you a passionate food entrepreneur ready to make your mark in the F&B industry?</p>
+    <p class="text24 w3-center w3-text-white">Whether you're just starting out or looking to scale your existing business, we're here to fuel your success.</p>
+  
+    <div class="w3-padding-top-24" style="text-align: center;">
+      <a href="https://wa.me/916382438585" target="_blank">
+      <button class="btn">Get in touch with us</button>
+      </a>
+    </div>
+  
+  </div>
+</div>
+
+<!-- what we do -->
+<div class="w3-container w3-white whitebgimg" style="min-height:100vh;" id="Services">
+  <div class="center" style="padding-top: 5vh;" >
+
+    <h2 class="w3-center text24 w3-text-black" style="font-size: 4vh;">What we do - F & B Business Consulting</h2>
+
+    <p class="text24 w3-center w3-text-black">We craft bespoke solutions for diverse culinary ventures, from cozy cafés to upscale restaurants</p>
+
+    <!-- F&B Buisness consulting -->
+    <div class="flexcontainer w3-center w3-margin-top">
+
+      <div class="flexitem">
+        <div class="w3-card w3-white" >
+          <img src="static/img/Cafe.png">
+        <p class="text24" style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh;">Cafe</p>
+        </div>
+      </div>
+
+      <div class="flexitem">
+        <div class="w3-card w3-white" >
+          <img src="static/img/Kiosks.png">
+          <p class="text24"  style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Kiosks</p>
+        </div>
+      </div>
+
+      <div class="flexitem">
+        <div class="w3-card w3-white" >
+          <img src="static/img/Food Trucks.png">
+          <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Food Trucks</p>
+        </div>
+      </div>
+
+      <div class="flexitem">
+        <div class="w3-card w3-white" >
+          <img src="static/img/Restobars.png">
+          <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Restobars</p>
+        </div>
+      </div>
+
+      <div class="flexitem">
+        <div class="w3-card w3-white" >
+          <img src="static/img/Cloud Kitchen.png">
+          <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Cloud Kitchen</p>
+        </div>
+      </div>
+
+      <div class="flexitem">
+        <div class="w3-card w3-white" >
+          <img src="static/img/Restaurant.png">
+          <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Restaurants</p>
+        </div>
+      </div>
+  
+    </div>
+
+    <h2 class="w3-center text24 w3-text-black" style="font-size: 4vh;">Catering</h2>
+
+     <!-- Pop-ups and Private Caterings -->
+    <div class="flexcontainer w3-center w3-margin-top">
+      
+    <div class="longcontainer2">
+
+      <div class="longcard w3-white">
+        <div class="image-container">
+            <img src="static/img/Pop ups.png">
+        </div>
+        <div class="longcontainer">
+            <h4 class="text24" style="font-size: 2.75vh;">Pop - up</h4>
+            <p class="text24" style="padding-bottom: 5px; margin-top: 0; font-size: 2vh;">Experience culinary magic at our monthly themed pop-ups, where food influencers and foodies unite</p>
         </div>
     </div>
-</section>
 
-<!-- About Section -->
-<section id="about" class="w3-container w3-padding-64">
-    <div class="w3-content" style="max-width:1200px">
-        <h2 class="section-title">About Me</h2>
-        <div class="w3-row-padding w3-margin-top">
-            <div class="w3-col l6 m12">
-                <img src="/placeholder.svg?height=400&width=500" alt="Sarah Martinez" class="w3-image w3-round" style="width:100%">
-            </div>
-            <div class="w3-col l6 m12 w3-padding-large">
-                <h3 class="w3-text-grey">Culinary Innovation Meets Business Strategy</h3>
-                <p>With a Master's degree in Food Science and over 15 years of experience in the culinary industry, I specialize in helping restaurants, food manufacturers, and hospitality businesses optimize their operations, develop innovative products, and create sustainable food systems.</p>
-                <p>My expertise spans menu development, food safety compliance, supply chain optimization, and staff training. I've worked with over 200 clients, from small local eateries to international food chains, helping them achieve their culinary and business goals.</p>
-                <div class="w3-margin-top">
-                    <p><i class="fas fa-check w3-text-green w3-margin-right"></i>Certified Food Safety Manager</p>
-                    <p><i class="fas fa-check w3-text-green w3-margin-right"></i>Sustainable Food Systems Expert</p>
-                    <p><i class="fas fa-check w3-text-green w3-margin-right"></i>Menu Engineering Specialist</p>
-                    <p><i class="fas fa-check w3-text-green w3-margin-right"></i>15+ Years Industry Experience</p>
-                </div>
-            </div>
+    <div class="longcard w3-white">
+      <div class="longcontainer">
+        <h4 class="text24"  style="font-size: 2.75vh;">Private Events</h4>
+          <p class="text24" style="padding-bottom: 5px; margin-top: 0; font-size: 2vh;">Elevate your events with bespoke menus and impeccable service, tailored to your unique taste and style</p> 
+      </div>
+      <div class="image-container">
+          <img src="static/img/Catering.png">
+      </div>
+  </div>
+
+
+    
+  </div>
+  </div>
+</div>
+</div>
+
+<!-- who we are -->
+<div class="w3-container w3-black blackbgimg" style="min-height:100vh;" id="About">
+  <div class="center" style=" align-content: center; padding: 2.5%; padding-left: 5%; padding-right: 5%;">
+
+    <h2 class="w3-center text24 w3-text-white" style="font-size: 4vh; padding-top: 5%; padding: 2.5%;">Who we are - Our brands</h2>
+
+    <div class="servicecontainer1">
+
+        <!-- Founder & santoCooks -->
+        <div class="servicecontainer2">
+
+          <h2 class="w3-center text24 w3-text-white" style="font-size: 3vh;">Our Founder</h2>
+
+          <p class="text24" style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh;">A dynamic and innovative young founder with a strong foundation in the culinary industry, having successfully managed a diverse range of projects, from small businesses to chic chain restobars, showcasing a seamless blend of creativity and expertise.  </p>
+          
+          <!-- founder img
+          <div class="w3-center founder-img-container">
+            <img src="/static/img/Founderimg.jpg" class="founder-img w3-center">
+          </div> -->
+
+          <div class="w3-center w3-container" >
+            <img src="static/img/SantoCooks Logo 2 white.png" class="santo-logo-img" style="width: 60%;">
+          </div>
+
+           <!-- insta button -->
+          <div style="text-align: center; padding-top: 5%;">
+            <a href="https://www.instagram.com/santocooks/">
+            <button class="btn">
+              <img src="static/img/Insta Logo.png" width="35" height="28">
+              @santocooks
+            </button>
+            </a>
+          </div>
+
         </div>
-    </div>
-</section>
 
-<!-- Stats Section -->
-<section class="stats-section w3-container w3-padding-32">
-    <div class="w3-content" style="max-width:1200px">
-        <div class="w3-row-padding w3-center">
-            <div class="w3-col l3 m6 s6">
-                <div class="stat-number">200+</div>
-                <p class="w3-large">Clients Served</p>
-            </div>
-            <div class="w3-col l3 m6 s6">
-                <div class="stat-number">15</div>
-                <p class="w3-large">Years Experience</p>
-            </div>
-            <div class="w3-col l3 m6 s6">
-                <div class="stat-number">50+</div>
-                <p class="w3-large">Menu Redesigns</p>
-            </div>
-            <div class="w3-col l3 m6 s6">
-                <div class="stat-number">98%</div>
-                <p class="w3-large">Client Satisfaction</p>
-            </div>
+        <div class="divider"></div>
+
+        <!-- culfusion -->
+        <div class="servicecontainer2">
+
+          <h2 class="w3-center text24 w3-text-white" style="font-size: 3vh;">Our Community</h2>
+
+          <p class="text24" style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh;">Culfusion is a vibrant community that brings food lovers together to explore, experience, and celebrate the diverse world of culinary arts. We're more than just an organization; we're a melting pot of flavors, cultures, and passionate foodies. </p>
+
+          <div class="w3-center w3-container" >
+            <img src="static/img/Text with logo and byline - white.png" class="santo-logo-img" style="width: 60%;">
+          </div>
+
+          <!-- insta button -->
+          <div style="text-align: center; padding-top: 5%;">
+          <a href="https://www.instagram.com/culfusioncuisine/">
+          <button class="btn">
+            <img src="static/img/Insta Logo.png" width="35" height="28">
+            @culfusioncuisine
+          </button>
+          </a>
         </div>
-    </div>
-</section>
 
-<!-- Services Section -->
-<section id="services" class="w3-container w3-padding-64">
-    <div class="w3-content" style="max-width:1200px">
-        <h2 class="section-title">Services Offered</h2>
-        <div class="w3-row-padding w3-margin-top">
-            <div class="w3-col l4 m6 s12 w3-margin-bottom">
-                <div class="service-card w3-padding-large w3-center">
-                    <i class="fas fa-clipboard-list w3-jumbo w3-margin-bottom"></i>
-                    <h3>Menu Development</h3>
-                    <p>Create innovative, profitable menus that align with your brand identity and target market. From concept to execution, I'll help you design dishes that delight customers and maximize profits.</p>
-                    <ul class="w3-left-align w3-margin-top">
-                        <li>Recipe development & testing</li>
-                        <li>Cost analysis & pricing</li>
-                        <li>Seasonal menu planning</li>
-                        <li>Dietary accommodation options</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="w3-col l4 m6 s12 w3-margin-bottom">
-                <div class="service-card w3-padding-large w3-center">
-                    <i class="fas fa-shield-alt w3-jumbo w3-margin-bottom"></i>
-                    <h3>Food Safety & Compliance</h3>
-                    <p>Ensure your establishment meets all health department requirements and industry standards. Comprehensive food safety training and HACCP implementation.</p>
-                    <ul class="w3-left-align w3-margin-top">
-                        <li>HACCP plan development</li>
-                        <li>Staff training programs</li>
-                        <li>Health inspection preparation</li>
-                        <li>Documentation systems</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="w3-col l4 m6 s12 w3-margin-bottom">
-                <div class="service-card w3-padding-large w3-center">
-                    <i class="fas fa-chart-line w3-jumbo w3-margin-bottom"></i>
-                    <h3>Operations Optimization</h3>
-                    <p>Streamline your kitchen operations for maximum efficiency and profitability. From workflow design to inventory management, optimize every aspect of your food service.</p>
-                    <ul class="w3-left-align w3-margin-top">
-                        <li>Kitchen workflow analysis</li>
-                        <li>Inventory management systems</li>
-                        <li>Cost reduction strategies</li>
-                        <li>Equipment recommendations</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="w3-col l4 m6 s12 w3-margin-bottom">
-                <div class="service-card w3-padding-large w3-center">
-                    <i class="fas fa-users w3-jumbo w3-margin-bottom"></i>
-                    <h3>Staff Training</h3>
-                    <p>Develop your team's culinary skills and food service expertise. Comprehensive training programs tailored to your specific needs and standards.</p>
-                    <ul class="w3-left-align w3-margin-top">
-                        <li>Culinary technique workshops</li>
-                        <li>Customer service training</li>
-                        <li>Food safety certification</li>
-                        <li>Leadership development</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="w3-col l4 m6 s12 w3-margin-bottom">
-                <div class="service-card w3-padding-large w3-center">
-                    <i class="fas fa-leaf w3-jumbo w3-margin-bottom"></i>
-                    <h3>Sustainability Consulting</h3>
-                    <p>Implement eco-friendly practices that reduce waste, lower costs, and appeal to environmentally conscious consumers. Build a sustainable food business.</p>
-                    <ul class="w3-left-align w3-margin-top">
-                        <li>Waste reduction strategies</li>
-                        <li>Local sourcing programs</li>
-                        <li>Energy efficiency audits</li>
-                        <li>Sustainable packaging solutions</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="w3-col l4 m6 s12 w3-margin-bottom">
-                <div class="service-card w3-padding-large w3-center">
-                    <i class="fas fa-rocket w3-jumbo w3-margin-bottom"></i>
-                    <h3>Business Strategy</h3>
-                    <p>Develop comprehensive business strategies for food service establishments. From startup guidance to expansion planning, achieve your business goals.</p>
-                    <ul class="w3-left-align w3-margin-top">
-                        <li>Market analysis & positioning</li>
-                        <li>Financial planning & budgeting</li>
-                        <li>Expansion strategies</li>
-                        <li>Brand development</li>
-                    </ul>
-                </div>
-            </div>
         </div>
-    </div>
-</section>
 
-<!-- Projects Section -->
-<section id="projects" class="w3-container w3-padding-64" style="background-color: var(--muted)">
-    <div class="w3-content" style="max-width:1200px">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="w3-row-padding w3-margin-top">
-            <div class="w3-col l4 m6 s12 w3-margin-bottom">
-                <!--  Made project card clickable with onclick handler -->
-                <div class="project-card" onclick="openProjectModal('project1')" style="cursor: pointer;">
-                    <img src="/placeholder.svg?height=250&width=400" alt="Restaurant Redesign" class="w3-image" style="width:100%">
-                    <div class="w3-padding">
-                        <h3>Farm-to-Table Restaurant Launch</h3>
-                        <p>Complete menu development and kitchen optimization for a new farm-to-table restaurant. Increased profit margins by 35% through strategic menu engineering.</p>
-                        <div class="w3-margin-top">
-                            <span class="w3-tag w3-green w3-small">Menu Development</span>
-                            <span class="w3-tag w3-green w3-small">Operations</span>
-                        </div>
-                        <!--  Added click indicator -->
-                        <div class="w3-margin-top w3-center">
-                            <small class="w3-text-grey"><i class="fas fa-eye w3-margin-right"></i>Click to view details</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-col l4 m6 s12 w3-margin-bottom">
-                <!--  Made project card clickable -->
-                <div class="project-card" onclick="openProjectModal('project2')" style="cursor: pointer;">
-                    <img src="/placeholder.svg?height=250&width=400" alt="Food Manufacturing" class="w3-image" style="width:100%">
-                    <div class="w3-padding">
-                        <h3>Food Manufacturing Scale-Up</h3>
-                        <p>Helped a local bakery scale their operations to supply regional grocery chains. Implemented HACCP systems and optimized production workflows.</p>
-                        <div class="w3-margin-top">
-                            <span class="w3-tag w3-green w3-small">Food Safety</span>
-                            <span class="w3-tag w3-green w3-small">Scale-Up</span>
-                        </div>
-                        <div class="w3-margin-top w3-center">
-                            <small class="w3-text-grey"><i class="fas fa-eye w3-margin-right"></i>Click to view details</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-col l4 m6 s12 w3-margin-bottom">
-                <!--  Made project card clickable -->
-                <div class="project-card" onclick="openProjectModal('project3')" style="cursor: pointer;">
-                    <img src="/placeholder.svg?height=250&width=400" alt="Sustainability Project" class="w3-image" style="width:100%">
-                    <div class="w3-padding">
-                        <h3>Zero-Waste Initiative</h3>
-                        <p>Implemented comprehensive sustainability program for a restaurant chain, reducing food waste by 60% and cutting operational costs by 25%.</p>
-                        <div class="w3-margin-top">
-                            <span class="w3-tag w3-green w3-small">Sustainability</span>
-                            <span class="w3-tag w3-green w3-small">Cost Reduction</span>
-                        </div>
-                        <div class="w3-margin-top w3-center">
-                            <small class="w3-text-grey"><i class="fas fa-eye w3-margin-right"></i>Click to view details</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-col l4 m6 s12 w3-margin-bottom">
-                <!--  Made project card clickable -->
-                <div class="project-card" onclick="openProjectModal('project4')" style="cursor: pointer;">
-                    <img src="/placeholder.svg?height=250&width=400" alt="Hotel Restaurant" class="w3-image" style="width:100%">
-                    <div class="w3-padding">
-                        <h3>Luxury Hotel Restaurant</h3>
-                        <p>Redesigned menu and operations for a 5-star hotel restaurant. Achieved Michelin recognition within 18 months of implementation.</p>
-                        <div class="w3-margin-top">
-                            <span class="w3-tag w3-green w3-small">Fine Dining</span>
-                            <span class="w3-tag w3-green w3-small">Luxury Service</span>
-                        </div>
-                        <div class="w3-margin-top w3-center">
-                            <small class="w3-text-grey"><i class="fas fa-eye w3-margin-right"></i>Click to view details</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-col l4 m6 s12 w3-margin-bottom">
-                <!--  Made project card clickable -->
-                <div class="project-card" onclick="openProjectModal('project5')" style="cursor: pointer;">
-                    <img src="/placeholder.svg?height=250&width=400" alt="Food Truck Consulting" class="w3-image" style="width:100%">
-                    <div class="w3-padding">
-                        <h3>Food Truck Fleet Optimization</h3>
-                        <p>Streamlined operations for a food truck company, optimizing menu for mobile service and implementing efficient inventory systems.</p>
-                        <div class="w3-margin-top">
-                            <span class="w3-tag w3-green w3-small">Mobile Food</span>
-                            <span class="w3-tag w3-green w3-small">Efficiency</span>
-                        </div>
-                        <div class="w3-margin-top w3-center">
-                            <small class="w3-text-grey"><i class="fas fa-eye w3-margin-right"></i>Click to view details</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-col l4 m6 s12 w3-margin-bottom">
-                <!--  Made project card clickable -->
-                <div class="project-card" onclick="openProjectModal('project6')" style="cursor: pointer;">
-                    <img src="/placeholder.svg?height=250&width=400" alt="Corporate Cafeteria" class="w3-image" style="width:100%">
-                    <div class="w3-padding">
-                        <h3>Corporate Wellness Program</h3>
-                        <p>Developed healthy menu options and nutrition education program for a Fortune 500 company's employee cafeteria, improving employee satisfaction by 40%.</p>
-                        <div class="w3-margin-top">
-                            <span class="w3-tag w3-green w3-small">Wellness</span>
-                            <span class="w3-tag w3-green w3-small">Corporate</span>
-                        </div>
-                        <div class="w3-margin-top w3-center">
-                            <small class="w3-text-grey"><i class="fas fa-eye w3-margin-right"></i>Click to view details</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-</section>
+  </div>
+</div>
 
-<!-- Testimonials Section -->
-<section id="testimonials" class="w3-container w3-padding-64">
-    <div class="w3-content" style="max-width:1200px">
-        <h2 class="section-title">Client Testimonials</h2>
-        <div class="w3-row-padding w3-margin-top">
-            <div class="w3-col l4 m6 s12 w3-margin-bottom">
-                <div class="testimonial-card w3-padding-large">
-                    <p class="w3-large">"Sarah transformed our restaurant completely. Her menu engineering expertise increased our profit margins by 40% while maintaining the quality our customers love. Absolutely exceptional work!"</p>
-                    <div class="w3-margin-top">
-                        <img src="/placeholder.svg?height=60&width=60" alt="Client" class="w3-circle w3-margin-right" style="width:60px">
-                        <div style="display:inline-block">
-                            <h4 class="w3-margin-bottom">Michael Chen</h4>
-                            <p class="w3-text-grey">Owner, The Garden Bistro</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-col l4 m6 s12 w3-margin-bottom">
-                <div class="testimonial-card w3-padding-large">
-                    <p class="w3-large">"Working with Sarah was a game-changer for our food manufacturing business. Her HACCP implementation and scale-up strategies helped us expand to 50+ retail locations successfully."</p>
-                    <div class="w3-margin-top">
-                        <img src="/placeholder.svg?height=60&width=60" alt="Client" class="w3-circle w3-margin-right" style="width:60px">
-                        <div style="display:inline-block">
-                            <h4 class="w3-margin-bottom">Lisa Rodriguez</h4>
-                            <p class="w3-text-grey">CEO, Artisan Bakery Co.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-col l4 m6 s12 w3-margin-bottom">
-                <div class="testimonial-card w3-padding-large">
-                    <p class="w3-large">"Sarah's sustainability consulting reduced our food waste by 60% and saved us thousands monthly. Her practical approach made the transition seamless for our entire team."</p>
-                    <div class="w3-margin-top">
-                        <img src="/placeholder.svg?height=60&width=60" alt="Client" class="w3-circle w3-margin-right" style="width:60px">
-                        <div style="display:inline-block">
-                            <h4 class="w3-margin-bottom">David Thompson</h4>
-                            <p class="w3-text-grey">Executive Chef, Green Valley Resort</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-col l4 m6 s12 w3-margin-bottom">
-                <div class="testimonial-card w3-padding-large">
-                    <p class="w3-large">"The staff training program Sarah developed elevated our service quality dramatically. Our customer satisfaction scores improved by 35% within three months."</p>
-                    <div class="w3-margin-top">
-                        <img src="/placeholder.svg?height=60&width=60" alt="Client" class="w3-circle w3-margin-right" style="width:60px">
-                        <div style="display:inline-block">
-                            <h4 class="w3-margin-bottom">Amanda Foster</h4>
-                            <p class="w3-text-grey">General Manager, Coastal Dining Group</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-col l4 m6 s12 w3-margin-bottom">
-                <div class="testimonial-card w3-padding-large">
-                    <p class="w3-large">"Sarah's business strategy consulting was instrumental in our successful expansion. Her market analysis and financial planning helped us open three new locations profitably."</p>
-                    <div class="w3-margin-top">
-                        <img src="/placeholder.svg?height=60&width=60" alt="Client" class="w3-circle w3-margin-right" style="width:60px">
-                        <div style="display:inline-block">
-                            <h4 class="w3-margin-bottom">Robert Kim</h4>
-                            <p class="w3-text-grey">Founder, Urban Eats Chain</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-col l4 m6 s12 w3-margin-bottom">
-                <div class="testimonial-card w3-padding-large">
-                    <p class="w3-large">"The menu development work Sarah did for our hotel restaurant was outstanding. We achieved Michelin recognition within 18 months - something we never thought possible."</p>
-                    <div class="w3-margin-top">
-                        <img src="/placeholder.svg?height=60&width=60" alt="Client" class="w3-circle w3-margin-right" style="width:60px">
-                        <div style="display:inline-block">
-                            <h4 class="w3-margin-bottom">Jennifer Walsh</h4>
-                            <p class="w3-text-grey">Food & Beverage Director, Grand Plaza Hotel</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="w3-container w3-padding-64" style="background-color: var(--muted)">
-    <div class="w3-content" style="max-width:1200px">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="w3-row-padding w3-margin-top">
-            <div class="w3-col l6 m12">
-                <div class="w3-padding-large">
-                    <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">Let's Discuss Your Project</h3>
-                    <p class="w3-large" style="color: var(--muted-foreground); line-height: 1.7;">Ready to transform your food business? I'd love to hear about your challenges and goals. Let's schedule a consultation to discuss how I can help you achieve success.</p>
-                    
-                    <div class="w3-margin-top w3-margin-bottom" style="margin-top: 2rem;">
-                        <p style="margin-bottom: 1rem;"><i class="fas fa-phone w3-margin-right" style="color: var(--primary);"></i><strong>Phone:</strong> (555) 123-4567</p>
-                        <p style="margin-bottom: 1rem;"><i class="fas fa-envelope w3-margin-right" style="color: var(--primary);"></i><strong>Email:</strong> sarah@foodconsultingpro.com</p>
-                        <p style="margin-bottom: 1rem;"><i class="fas fa-map-marker-alt w3-margin-right" style="color: var(--primary);"></i><strong>Location:</strong> San Francisco Bay Area</p>
-                        <p style="margin-bottom: 1rem;"><i class="fas fa-clock w3-margin-right" style="color: var(--primary);"></i><strong>Response Time:</strong> Within 24 hours</p>
-                    </div>
-
-                    <div class="w3-margin-top" style="margin-top: 2rem;">
-                        <h4 style="margin-bottom: 1rem;">Follow Me</h4>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-col l6 m12">
-                <!-- Enhanced form styling with modern card design -->
-                <form class="contact-form w3-padding-large" style="background-color: var(--background); border-radius: var(--radius); box-shadow: var(--shadow-lg);">
-                    <h3 style="margin-bottom: 2rem; font-size: 1.75rem;">Send a Message</h3>
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="text" placeholder="Company/Restaurant Name">
-                    <select>
-                        <option>Select Service Interest</option>
-                        <option>Menu Development</option>
-                        <option>Food Safety & Compliance</option>
-                        <option>Operations Optimization</option>
-                        <option>Staff Training</option>
-                        <option>Sustainability Consulting</option>
-                        <option>Business Strategy</option>
-                        <option>Multiple Services</option>
-                    </select>
-                    <textarea placeholder="Tell me about your project and goals..." rows="5" required></textarea>
-                    <button type="submit" class="btn-primary w3-block" style="margin-top: 1rem;">
-                        <i class="fas fa-paper-plane w3-margin-right"></i>Send Message
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer w3-container w3-padding-32 w3-center">
-    <div class="w3-content" style="max-width:1200px">
-        <div class="w3-row-padding">
-            <div class="w3-col l4 m12">
-                <h3>Sarah Martinez</h3>
-                <p>Food Consultant & Culinary Expert</p>
-                <p>Transforming food businesses through innovation and expertise.</p>
-            </div>
-            <div class="w3-col l4 m12">
-                <h3>Quick Links</h3>
-                <p><a href="#about" class="w3-text-white">About</a></p>
-                <p><a href="#services" class="w3-text-white">Services</a></p>
-                <p><a href="#projects" class="w3-text-white">Projects</a></p>
-                <p><a href="#testimonials" class="w3-text-white">Testimonials</a></p>
-            </div>
-            <div class="w3-col l4 m12">
-                <h3>Contact Info</h3>
-                <p><i class="fas fa-phone w3-margin-right"></i>(555) 123-4567</p>
-                <p><i class="fas fa-envelope w3-margin-right"></i>sarah@foodconsultingpro.com</p>
-                <p><i class="fas fa-map-marker-alt w3-margin-right"></i>San Francisco Bay Area</p>
-            </div>
-        </div>
-        <hr class="w3-border-grey" style="margin:50px 0">
-        <p>&copy; 2024 Sarah Martinez Food Consulting. All rights reserved.</p>
-    </div>
+    
+<footer class="w3-container w3-center w3-white w3-padding-small">
+  <p class="w3 w3-text-black">©Copyright 2025 - Culfusion & SantoCooks</p>
 </footer>
 
-<!--  Added project modal HTML structure before the footer -->
-<!-- Project Modals -->
-<div id="project1" class="w3-modal">
-    <div class="w3-modal-content w3-animate-zoom" style="max-width: 800px;">
-        <div class="w3-container">
-            <span onclick="document.getElementById('project1').style.display='none'" class="w3-button w3-display-topright w3-large">&times;</span>
-            <div class="w3-padding">
-                <img src="/placeholder.svg?height=300&width=600" alt="Farm-to-Table Restaurant" class="w3-image w3-margin-bottom" style="width:100%; border-radius: var(--radius);">
-                <h2 style="color: var(--primary);">Farm-to-Table Restaurant Launch</h2>
-                <div class="w3-margin-bottom">
-                    <span class="w3-tag w3-green w3-small">Menu Development</span>
-                    <span class="w3-tag w3-green w3-small">Operations</span>
-                    <span class="w3-tag w3-green w3-small">Staff Training</span>
-                </div>
-                
-                <h3>Project Overview</h3>
-                <p>Collaborated with Green Valley Farm Restaurant to create a complete farm-to-table dining experience from concept to execution. This comprehensive project involved menu development, kitchen optimization, staff training, and supplier relationship management.</p>
-                
-                <h3>Challenge</h3>
-                <p>The client wanted to launch a farm-to-table restaurant but lacked experience in seasonal menu planning, local sourcing, and managing the complexities of variable ingredient availability while maintaining consistent quality and profitability.</p>
-                
-                <h3>Solution & Implementation</h3>
-                <ul>
-                    <li><strong>Seasonal Menu Development:</strong> Created four distinct seasonal menus featuring locally sourced ingredients</li>
-                    <li><strong>Supplier Network:</strong> Established relationships with 12 local farms and producers</li>
-                    <li><strong>Kitchen Workflow:</strong> Designed efficient prep and cooking processes to handle variable ingredients</li>
-                    <li><strong>Staff Training:</strong> Developed comprehensive training on seasonal ingredients and farm-to-table philosophy</li>
-                    <li><strong>Cost Management:</strong> Implemented dynamic pricing strategies to maintain margins despite ingredient fluctuations</li>
-                </ul>
-                
-                <h3>Results</h3>
-                <ul>
-                    <li>35% increase in profit margins through strategic menu engineering</li>
-                    <li>95% customer satisfaction rating within first 6 months</li>
-                    <li>Featured in local food magazines and won "Best New Restaurant" award</li>
-                    <li>Reduced food waste by 45% through seasonal planning</li>
-                    <li>Built loyal customer base with 60% repeat visit rate</li>
-                </ul>
-                
-                <h3>Timeline</h3>
-                <p><strong>Duration:</strong> 8 months (pre-opening consultation through first year support)</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="project2" class="w3-modal">
-    <div class="w3-modal-content w3-animate-zoom" style="max-width: 800px;">
-        <div class="w3-container">
-            <span onclick="document.getElementById('project2').style.display='none'" class="w3-button w3-display-topright w3-large">&times;</span>
-            <div class="w3-padding">
-                <img src="/placeholder.svg?height=300&width=600" alt="Food Manufacturing Scale-Up" class="w3-image w3-margin-bottom" style="width:100%; border-radius: var(--radius);">
-                <h2 style="color: var(--primary);">Food Manufacturing Scale-Up</h2>
-                <div class="w3-margin-bottom">
-                    <span class="w3-tag w3-green w3-small">Food Safety</span>
-                    <span class="w3-tag w3-green w3-small">Scale-Up</span>
-                    <span class="w3-tag w3-green w3-small">HACCP</span>
-                </div>
-                
-                <h3>Project Overview</h3>
-                <p>Guided Artisan Bakery Co. through a complete transformation from a small local bakery to a regional supplier serving 50+ grocery chains. This project required comprehensive food safety implementation, production scaling, and quality control systems.</p>
-                
-                <h3>Challenge</h3>
-                <p>The family-owned bakery had outgrown their current capacity and received offers from major grocery chains, but lacked the food safety certifications, production systems, and quality control measures required for commercial distribution.</p>
-                
-                <h3>Solution & Implementation</h3>
-                <ul>
-                    <li><strong>HACCP Implementation:</strong> Developed and implemented comprehensive HACCP plans for all product lines</li>
-                    <li><strong>Facility Upgrade:</strong> Designed new production layout for 10x capacity increase</li>
-                    <li><strong>Quality Control:</strong> Established testing protocols and documentation systems</li>
-                    <li><strong>Staff Training:</strong> Trained 25 employees on food safety and production standards</li>
-                    <li><strong>Regulatory Compliance:</strong> Achieved FDA registration and state certifications</li>
-                    <li><strong>Supply Chain:</strong> Optimized ingredient sourcing for consistent quality at scale</li>
-                </ul>
-                
-                <h3>Results</h3>
-                <ul>
-                    <li>Successfully scaled production from 500 to 5,000 units daily</li>
-                    <li>Achieved 99.8% quality control pass rate</li>
-                    <li>Secured contracts with 50+ regional grocery stores</li>
-                    <li>Increased annual revenue by 800%</li>
-                    <li>Zero food safety incidents during scale-up period</li>
-                    <li>Maintained family bakery quality standards at commercial scale</li>
-                </ul>
-                
-                <h3>Timeline</h3>
-                <p><strong>Duration:</strong> 12 months (planning through full production)</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="project3" class="w3-modal">
-    <div class="w3-modal-content w3-animate-zoom" style="max-width: 800px;">
-        <div class="w3-container">
-            <span onclick="document.getElementById('project3').style.display='none'" class="w3-button w3-display-topright w3-large">&times;</span>
-            <div class="w3-padding">
-                <img src="/placeholder.svg?height=300&width=600" alt="Zero-Waste Initiative" class="w3-image w3-margin-bottom" style="width:100%; border-radius: var(--radius);">
-                <h2 style="color: var(--primary);">Zero-Waste Initiative</h2>
-                <div class="w3-margin-bottom">
-                    <span class="w3-tag w3-green w3-small">Sustainability</span>
-                    <span class="w3-tag w3-green w3-small">Cost Reduction</span>
-                    <span class="w3-tag w3-green w3-small">Environmental</span>
-                </div>
-                
-                <h3>Project Overview</h3>
-                <p>Led a comprehensive zero-waste initiative for Pacific Coast Restaurant Group's 15 locations, implementing sustainable practices that dramatically reduced environmental impact while significantly cutting operational costs.</p>
-                
-                <h3>Challenge</h3>
-                <p>The restaurant chain was facing increasing pressure from customers for sustainable practices, rising waste disposal costs, and wanted to align with corporate social responsibility goals while maintaining profitability across all locations.</p>
-                
-                <h3>Solution & Implementation</h3>
-                <ul>
-                    <li><strong>Waste Audit:</strong> Conducted comprehensive waste analysis across all 15 locations</li>
-                    <li><strong>Menu Optimization:</strong> Redesigned menus to minimize food waste and maximize ingredient utilization</li>
-                    <li><strong>Composting Program:</strong> Implemented on-site composting systems for organic waste</li>
-                    <li><strong>Supplier Partnerships:</strong> Negotiated with suppliers for reduced packaging and bulk delivery</li>
-                    <li><strong>Staff Training:</strong> Trained 200+ employees on waste reduction techniques</li>
-                    <li><strong>Technology Integration:</strong> Implemented inventory tracking systems to reduce over-ordering</li>
-                </ul>
-                
-                <h3>Results</h3>
-                <ul>
-                    <li>60% reduction in food waste across all locations</li>
-                    <li>25% decrease in operational costs ($180,000 annual savings)</li>
-                    <li>90% diversion of waste from landfills</li>
-                    <li>Achieved B-Corp certification for sustainability</li>
-                    <li>Increased customer satisfaction by 30% due to sustainability focus</li>
-                    <li>Won regional "Green Business of the Year" award</li>
-                </ul>
-                
-                <h3>Timeline</h3>
-                <p><strong>Duration:</strong> 18 months (pilot program through full implementation)</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="project4" class="w3-modal">
-    <div class="w3-modal-content w3-animate-zoom" style="max-width: 800px;">
-        <div class="w3-container">
-            <span onclick="document.getElementById('project4').style.display='none'" class="w3-button w3-display-topright w3-large">&times;</span>
-            <div class="w3-padding">
-                <img src="/placeholder.svg?height=300&width=600" alt="Luxury Hotel Restaurant" class="w3-image w3-margin-bottom" style="width:100%; border-radius: var(--radius);">
-                <h2 style="color: var(--primary);">Luxury Hotel Restaurant</h2>
-                <div class="w3-margin-bottom">
-                    <span class="w3-tag w3-green w3-small">Fine Dining</span>
-                    <span class="w3-tag w3-green w3-small">Luxury Service</span>
-                    <span class="w3-tag w3-green w3-small">Michelin</span>
-                </div>
-                
-                <h3>Project Overview</h3>
-                <p>Transformed the dining experience at Grand Plaza Hotel's signature restaurant, elevating it from a standard hotel restaurant to a Michelin-recognized fine dining destination that became a culinary landmark in the city.</p>
-                
-                <h3>Challenge</h3>
-                <p>The 5-star hotel's restaurant was underperforming, with declining guest satisfaction, low local patronage, and fierce competition from standalone fine dining establishments. The goal was to create a destination restaurant worthy of Michelin recognition.</p>
-                
-                <h3>Solution & Implementation</h3>
-                <ul>
-                    <li><strong>Menu Redesign:</strong> Created innovative tasting menus featuring modern techniques and local ingredients</li>
-                    <li><strong>Kitchen Renovation:</strong> Designed state-of-the-art kitchen layout for fine dining operations</li>
-                    <li><strong>Staff Development:</strong> Recruited and trained world-class culinary team</li>
-                    <li><strong>Service Standards:</strong> Implemented luxury service protocols and wine program</li>
-                    <li><strong>Supplier Network:</strong> Established relationships with premium ingredient suppliers</li>
-                    <li><strong>Brand Positioning:</strong> Developed restaurant identity separate from hotel brand</li>
-                </ul>
-                
-                <h3>Results</h3>
-                <ul>
-                    <li>Achieved Michelin recognition within 18 months</li>
-                    <li>Increased restaurant revenue by 250%</li>
-                    <li>Achieved 95% customer satisfaction rating</li>
-                    <li>Became #1 fine dining destination in the city</li>
-                    <li>Attracted 40% non-hotel guest patronage</li>
-                    <li>Won multiple culinary awards and recognition</li>
-                </ul>
-                
-                <h3>Timeline</h3>
-                <p><strong>Duration:</strong> 24 months (concept through Michelin recognition)</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="project5" class="w3-modal">
-    <div class="w3-modal-content w3-animate-zoom" style="max-width: 800px;">
-        <div class="w3-container">
-            <span onclick="document.getElementById('project5').style.display='none'" class="w3-button w3-display-topright w3-large">&times;</span>
-            <div class="w3-padding">
-                <img src="/placeholder.svg?height=300&width=600" alt="Food Truck Fleet" class="w3-image w3-margin-bottom" style="width:100%; border-radius: var(--radius);">
-                <h2 style="color: var(--primary);">Food Truck Fleet Optimization</h2>
-                <div class="w3-margin-bottom">
-                    <span class="w3-tag w3-green w3-small">Mobile Food</span>
-                    <span class="w3-tag w3-green w3-small">Efficiency</span>
-                    <span class="w3-tag w3-green w3-small">Operations</span>
-                </div>
-                
-                <h3>Project Overview</h3>
-                <p>Optimized operations for Street Eats Mobile, a growing food truck company with 8 trucks, streamlining everything from menu design to inventory management to maximize efficiency and profitability in the mobile food service industry.</p>
-                
-                <h3>Challenge</h3>
-                <p>The food truck fleet was struggling with inconsistent quality across trucks, complex inventory management, long service times, and difficulty maintaining profitability due to the unique constraints of mobile food service.</p>
-                
-                <h3>Solution & Implementation</h3>
-                <ul>
-                    <li><strong>Menu Streamlining:</strong> Redesigned menu for optimal mobile service with 12 core items</li>
-                    <li><strong>Prep Systems:</strong> Developed centralized prep kitchen for consistency and efficiency</li>
-                    <li><strong>Inventory Management:</strong> Implemented digital tracking system for all 8 trucks</li>
-                    <li><strong>Service Optimization:</strong> Redesigned workflow to reduce average service time by 40%</li>
-                    <li><strong>Quality Control:</strong> Established standards and training for consistent food quality</li>
-                    <li><strong>Route Planning:</strong> Optimized truck locations and schedules for maximum revenue</li>
-                </ul>
-                
-                <h3>Results</h3>
-                <ul>
-                    <li>Reduced average service time from 8 to 4.5 minutes</li>
-                    <li>Increased daily revenue per truck by 45%</li>
-                    <li>Achieved 98% consistency rating across all trucks</li>
-                    <li>Reduced food waste by 35% through better inventory management</li>
-                    <li>Expanded to 12 trucks within 6 months</li>
-                    <li>Won "Best Food Truck Fleet" award in the city</li>
-                </ul>
-                
-                <h3>Timeline</h3>
-                <p><strong>Duration:</strong> 10 months (analysis through full optimization)</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="project6" class="w3-modal">
-    <div class="w3-modal-content w3-animate-zoom" style="max-width: 800px;">
-        <div class="w3-container">
-            <span onclick="document.getElementById('project6').style.display='none'" class="w3-button w3-display-topright w3-large">&times;</span>
-            <div class="w3-padding">
-                <img src="/placeholder.svg?height=300&width=600" alt="Corporate Wellness Program" class="w3-image w3-margin-bottom" style="width:100%; border-radius: var(--radius);">
-                <h2 style="color: var(--primary);">Corporate Wellness Program</h2>
-                <div class="w3-margin-bottom">
-                    <span class="w3-tag w3-green w3-small">Wellness</span>
-                    <span class="w3-tag w3-green w3-small">Corporate</span>
-                    <span class="w3-tag w3-green w3-small">Nutrition</span>
-                </div>
-                
-                <h3>Project Overview</h3>
-                <p>Developed and implemented a comprehensive wellness-focused food program for TechCorp's 2,500-employee headquarters, transforming their cafeteria into a model for corporate nutrition and employee wellbeing.</p>
-                
-                <h3>Challenge</h3>
-                <p>The Fortune 500 company wanted to improve employee health and satisfaction through better food options, but their existing cafeteria offered limited healthy choices and had low employee satisfaction ratings.</p>
-                
-                <h3>Solution & Implementation</h3>
-                <ul>
-                    <li><strong>Menu Redesign:</strong> Created nutritionally balanced menus with clear labeling and variety</li>
-                    <li><strong>Nutrition Education:</strong> Developed educational programs and materials for employees</li>
-                    <li><strong>Healthy Options:</strong> Introduced salad bars, fresh juice stations, and grab-and-go healthy meals</li>
-                    <li><strong>Dietary Accommodations:</strong> Ensured options for all dietary restrictions and preferences</li>
-                    <li><strong>Wellness Integration:</strong> Coordinated with HR wellness programs and health initiatives</li>
-                    <li><strong>Feedback Systems:</strong> Implemented employee feedback and suggestion systems</li>
-                </ul>
-                
-                <h3>Results</h3>
-                <ul>
-                    <li>40% increase in employee satisfaction with food services</li>
-                    <li>65% of employees now regularly use cafeteria (up from 30%)</li>
-                    <li>25% increase in healthy food option sales</li>
-                    <li>Reduced employee sick days by 15% (attributed to better nutrition)</li>
-                    <li>Won "Best Corporate Wellness Program" industry award</li>
-                    <li>Became model program for other corporate locations</li>
-                </ul>
-                
-                <h3>Timeline</h3>
-                <p><strong>Duration:</strong> 14 months (planning through full program implementation)</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-// Mobile navigation toggle
-function myFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// Form submission handler
-document.querySelector('.contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Thank you for your message! I will get back to you within 24 hours.');
-    this.reset();
-});
-
-//  Added modal functionality for project details
-function openProjectModal(projectId) {
-    document.getElementById(projectId).style.display = 'block';
-}
-
-// Close modal when clicking outside of it
-window.onclick = function(event) {
-    const modals = document.querySelectorAll('.w3-modal');
-    modals.forEach(modal => {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    });
-}
-</script>
-
-</body>
-</html>
