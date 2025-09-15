@@ -9,22 +9,23 @@
    </url>
 
    <url>
-      <loc>https://www.culfusion.com/#home</loc>
+      <loc>https://www.culfusion.com/home</loc>
       <lastmod>2025-09-10</lastmod>
       <changefreq>daily</changefreq>
-      <priority>1</priority>
+      <priority>1.0</priority>
    </url>
 
    <url>
-      <loc>https://www.culfusion.com/#Services</loc>
+      <loc>https://www.culfusion.com/Services</loc>
       <lastmod>2025-09-15</lastmod>
       <changefreq>daily</changefreq>
-      <priority>1</priority>
+      <priority>1.0</priority>
    </url>
 
       <url>
-      <loc>https://www.culfusion.com/#About</loc>
+      <loc>https://www.culfusion.com/About</loc>
       <lastmod>2025-09-15</lastmod>
       <changefreq>daily</changefreq>
-      <priority>1</priority>
+      <priority>1.0</priority>
    </url>
+<urlset>
