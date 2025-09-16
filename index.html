@@ -11,6 +11,21 @@
   gtag('config', 'G-WT3BSGK681');
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const navLinks = document.querySelectorAll('.w3-button.text24');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      // Remove 'selected' class from all links
+      navLinks.forEach(item => item.classList.remove('selected'));
+
+      // Add 'selected' class to the clicked link
+      this.classList.add('selected');
+    });
+  });
+});
+</script>
 <script type="text/javascript">
   (function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -21,8 +36,9 @@
 <link rel="icon" type="image/png" href="/static/img/favicon.png"/> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Culfusion - Food and beverage business consultant</title>
-
+<title>Culfusion - Food and beverage business consultants</title>
+<meta name="description" content="Culfusion is India’s premier food consulting firm. We bring your food business dream to life with expert support in recipe development, kitchen setup, staff training, overall business development, and consulting, guiding you to market success">
+<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -362,7 +378,7 @@ object-fit: cover;
 
 .longcard {
   flex-direction: column; /* Stacks image and text vertically */
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -415,17 +431,74 @@ object-fit: cover;
   transform: scale(1.1);
   box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
 }
+
+.longcard {
+  transition: transform 0.3s ease, box-shadow 0.5s ease;
+}
+
+.longcard:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
+}
+
+.selected {
+  border-bottom: 2px solid #000; /* You can change the color and thickness */
+}
+
+@media (max-width: 600px) {
+  /* Stacks the 'Pop-up' and 'Private Events' cards vertically */
+  .flexcontainer {
+    flex-direction: column;
+  }
+  
+  /* Makes each card fill the available width */
+  .longcard {
+    width: 100%;
+    height: auto !important; /* Overrides the inline height to allow content to flow */
+    flex-direction: column; /* Stacks the image and text within the card */
+    margin-bottom: 20px; /* Adds space between the stacked cards */
+  }
+
+  /* Ensures the image takes up a reasonable width on mobile */
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Adjusts the text container for stacking */
+  .longcontainer {
+    padding: 10px;
+    text-align: center; /* Centers the text */
+  }
+
+  /* Re-orders the content on smaller screens if needed
+     This example reorders the Private Events card to have text on top of the image */
+  .longcard:nth-of-type(2) {
+    flex-direction: column-reverse;
+  }
+
+  /* Adjust font sizes for better mobile readability */
+  .text24 h4 {
+    font-size: 4vw !important;
+  }
+
+  .text24 p {
+    font-size: 3.5vw !important;
+  }
+}
 </style>
 </style>
 
 </head>
+
+
 <body>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-center w3-white w3-padding-small" id="myNavbar">
+  <div class="w3-center w3-white w3-padding-large" id="myNavbar">
 
-      <a href="#Services" class=" w3-button text24" style="font-size: 2vh;">What we do</a>
+      <a href="#Services" class=" w3-button text24" style="font-size: 2.5vh;">What we do</a>
 
     <div class="w3-button" id="topbarimgcontainer">
       <a href="#home">
@@ -433,7 +506,7 @@ object-fit: cover;
     </a>
     </div>
 
-      <a href="#About" class=" w3-button text24" style="font-size: 2vh;">Who we are</a>
+      <a href="#About" class=" w3-button text24" style="font-size: 2.5vh;">Who we are</a>
 
   </div>
 </div>
@@ -464,7 +537,7 @@ object-fit: cover;
 
 <!-- what we do -->
 <div class="w3-container w3-white whitebgimg" style="min-height:100vh;" id="Services">
-  <div class="center" style="padding-top: 5vh;" >
+  <div class="center" style="padding-top: 8vh;" >
 
     <h2 class="w3-center text24 w3-text-black" style="font-size: 4vh;">What we do - Food and beverage Business Consulting</h2>
 
@@ -524,7 +597,7 @@ object-fit: cover;
       
     <div class="longcontainer2">
 
-      <div class="longcard w3-white">
+      <div class="longcard w3-white" style="height: 220px;">
         <div class="image-container">
             <img src="static/img/Pop ups.png">
         </div>
@@ -534,7 +607,7 @@ object-fit: cover;
         </div>
     </div>
 
-    <div class="longcard w3-white">
+    <div class="longcard w3-white" style="height: 220px;">
       <div class="longcontainer">
         <h4 class="text24"  style="font-size: 2.75vh;">Private Events</h4>
           <p class="text24" style="padding-bottom: 5px; margin-top: 0; font-size: 2vh;">Elevate your events with bespoke menus and impeccable service, tailored to your unique taste and style</p> 
@@ -572,14 +645,14 @@ object-fit: cover;
           </div> -->
 
           <div class="w3-center w3-container" >
-            <img src="static/img/SantoCooks Logo 2 white.png" class="santo-logo-img" style="width: 60%;">
+            <img src="static/img/SantoCooks Logo 2 white.png" class="santo-logo-img" style="width: 50%;">
           </div>
 
            <!-- insta button -->
           <div style="text-align: center; padding-top: 5%;">
             <a href="https://www.instagram.com/santocooks/">
             <button class="btn">
-              <img src="static/img/Insta Logo.png" width="35" height="28">
+              <img src="static/img/Insta Logo.png" width="30" height="25">
               @santocooks
             </button>
             </a>
@@ -597,14 +670,14 @@ object-fit: cover;
           <p class="text24" style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh;">Culfusion is a vibrant community that brings food lovers together to explore, experience, and celebrate the diverse world of culinary arts. We're more than just an organization; we're a melting pot of flavors, cultures, and passionate foodies. </p>
 
           <div class="w3-center w3-container" >
-            <img src="static/img/Text with logo and byline - white.png" class="santo-logo-img" style="width: 60%;">
+            <img src="static/img/Text with logo and byline - white.png" class="santo-logo-img" style="width: 50%;">
           </div>
 
           <!-- insta button -->
           <div style="text-align: center; padding-top: 5%;">
           <a href="https://www.instagram.com/culfusioncuisine/">
           <button class="btn">
-            <img src="static/img/Insta Logo.png" width="35" height="28">
+            <img src="static/img/Insta Logo.png" width="30" height="25">
             @culfusioncuisine
           </button>
           </a>
