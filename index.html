@@ -521,6 +521,60 @@
         font-size: 1rem !important;
       }
     }
+
+    /* --- Process Roadmap Section --- */
+    .process-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+      flex: 1;
+      min-width: 130px;
+      /* Reduced to ensure 6 fit in 1000px */
+    }
+
+    .process-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #000;
+      /* Black icons */
+    }
+
+    /* --- Testimonials Section --- */
+    .testimonial-card {
+      background: #fdfdfd;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid #000;
+      margin: 10px;
+      flex: 1;
+      min-width: 250px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      color: #555;
+    }
+
+    /* --- Service Card Details (Hover Reveal) --- */
+    .service-details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out;
+      font-size: 0.9rem;
+      color: #555;
+      text-align: center;
+    }
+
+    /* Reveal on hover of the parent card */
+    .w3-card:hover .service-details,
+    .longcard:hover .service-details {
+      max-height: 100px;
+      /* Adjust as needed */
+      margin-top: 10px;
+    }
   </style>
   </style>
 
@@ -555,18 +609,66 @@
       </div>
 
       <h1 class="w3-center largetext70 w3-text-white" style="font-size: 6vh;">Culinary x fusion</h1>
-      <h2 class="w3-center largetext70 w3-text-white" style="font-size: 6vh;">Where experiences are built through</h2>
-      <h2 class="w3-center largetext70 w3-text-white" style="font-size: 6vh;">taste + texture + innovation</h2>
+      <h2 class="w3-center largetext70 w3-text-white" style="font-size: 6vh;">Turn Your Culinary Dreams into a
+        Profitable Businesses!</h2>
 
-      <p class="text24 w3-center w3-text-white">Are you a passionate food entrepreneur ready to make your mark in the
-        Food and beverage industry?</p>
-      <p class="text24 w3-center w3-text-white">Whether you're just starting out or looking to scale your existing
-        business, we're here to fuel your success.</p>
+      <p class="text24 w3-center w3-text-white">Expert consulting for Cafes, Cloud Kitchens, and Restaurants.</p>
+      <p class="text24 w3-center w3-text-white">From recipe development to grand opening, we fuel your success.</p>
 
       <div class="w3-padding-top-24" style="text-align: center;">
         <a href="https://wa.me/916382438585" target="_blank">
-          <button class="btn">Get in touch with us</button>
+          <button class="btn">Book a Free 15-min Discovery Call</button>
         </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Process Roadmap -->
+  <div class="w3-container w3-white" style="padding: 16px 16px" id="Process">
+    <h2 class="w3-center text24" style="font-size: 4vh; margin-bottom: 32px;">Your Journey to Success</h2>
+    <div class="flexcontainer"
+      style="max-width: 1000px; margin: 0 auto; justify-content: space-between; flex-wrap: wrap; gap: 25px;">
+
+      <div class="process-step" style="min-width: 130px; text-align: center;">
+        <img src="static/img/Process_1.png" alt="Ideation Icon" style="width: 50px; height: auto; margin-bottom: 15px;">
+        <h4 style="font-size: 1.4rem; margin-top: 10px;">Ideation & Concept</h4>
+        <p>Brand identity, vision board, and concept finalization.</p>
+      </div>
+
+      <div class="process-step" style="min-width: 130px;">
+        <img src="static/img/Process_2.png" alt="Business Planning Icon"
+          style="width: 50px; height: auto; margin-bottom: 15px;">
+        <h4 style="font-size: 1.4rem; margin-top: 10px;">Business Planning</h4>
+        <p>Financial modeling, location scouting, and feasibility report.</p>
+      </div>
+
+      <div class="process-step" style="min-width: 130px;">
+        <img src="static/img/Process_3_1.png" alt="Kitchen Design Icon"
+          style="width: 50px; height: auto; margin-bottom: 15px;">
+        <h4 style="font-size: 1.4rem; margin-top: 10px;">Kitchen Design</h4>
+        <p>Commercial kitchen layout, planning, and equipment sourcing.</p>
+      </div>
+
+      <div class="process-step" style="min-width: 130px;">
+        <img src="static/img/Process_4.png" alt="Menu Development Icon"
+          style="width: 50px; height: auto; margin-bottom: 15px;">
+        <h4 style="font-size: 1.4rem; margin-top: 10px;">Menu Development</h4>
+        <p>Recipe creation, food trials, and cost engineering.</p>
+      </div>
+
+      <div class="process-step" style="min-width: 130px;">
+        <img src="static/img/Process_5.png" alt="Staff & Training Icon"
+          style="width: 50px; height: auto; margin-bottom: 15px;">
+        <h4 style="font-size: 1.4rem; margin-top: 10px;">Staff & Training</h4>
+        <p>Hiring key staff, SOP implementation, and service training.</p>
+      </div>
+
+      <div class="process-step" style="min-width: 130px;">
+        <img src="static/img/Process_6.png" alt="Grand Launch Icon"
+          style="width: 50px; height: auto; margin-bottom: 15px;">
+        <h4 style="font-size: 1.4rem; margin-top: 10px;">Grand Launch</h4>
+        <p>Marketing strategy, soft launch, and operations handover.</p>
       </div>
 
     </div>
@@ -589,6 +691,9 @@
           <div class="w3-card w3-white">
             <img src="static/img/Cafe.png" alt="Cafe Consulting Services">
             <p class="text24" style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh;">Cafe</p>
+            <div class="service-details">
+              <p style="padding: 0 10px 10px 10px; margin: 0;">Barista training, menu design, and interior flow.</p>
+            </div>
           </div>
         </div>
 
@@ -596,6 +701,10 @@
           <div class="w3-card w3-white">
             <img src="static/img/Kiosks.png" alt="Food Kiosk Setup">
             <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Kiosks</p>
+            <div class="service-details">
+              <p style="padding: 0 10px 10px 10px; margin: 0;">Efficient workflow, maximum space utility, grab-and-go
+                menus.</p>
+            </div>
           </div>
         </div>
 
@@ -604,6 +713,10 @@
             <img src="static/img/Food Trucks.png" alt="Food Truck Business Consulting">
             <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Food
               Trucks</p>
+            <div class="service-details">
+              <p style="padding: 0 10px 10px 10px; margin: 0;">Vehicle layout, concise menu design, quick operations.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -612,6 +725,9 @@
             <img src="static/img/Restobars.png" alt="Restobar Consulting and Setup">
             <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Restobars
             </p>
+            <div class="service-details">
+              <p style="padding: 0 10px 10px 10px; margin: 0;">Licensing guidance, mixology, and bar station setup.</p>
+            </div>
           </div>
         </div>
 
@@ -620,6 +736,10 @@
             <img src="static/img/Cloud Kitchen.png" alt="Cloud Kitchen Business Model">
             <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Cloud
               Kitchen</p>
+            <div class="service-details">
+              <p style="padding: 0 10px 10px 10px; margin: 0;">Aggregator integration, packaging solutions, high-volume
+                prep.</p>
+            </div>
           </div>
         </div>
 
@@ -628,6 +748,10 @@
             <img src="static/img/Restaurant.png" alt="Restaurant Consulting Services">
             <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">
               Restaurants</p>
+            <div class="service-details">
+              <p style="padding: 0 10px 10px 10px; margin: 0;">Full-scale concept, detailed kitchen planning, staff
+                training.</p>
+            </div>
           </div>
         </div>
 
@@ -677,6 +801,41 @@
 
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Our Clients -->
+  <div class="w3-container w3-white" style="padding: 16px 16px" id="Process">
+    <h2 class="w3-center text24" style="font-size: 4vh; margin-bottom: 32px;">Trusted by Passionate Founders & Brands
+    </h2>
+    <div class="flexcontainer"
+      style="max-width: 1000px; margin: 0 auto; justify-content: space-between; flex-wrap: wrap; gap: 25px;">
+
+      <div class="process-step" style="min-width: 130px;">
+        <img src="static/img/Partner_Logo_1.png" style="width: 100%;">
+      </div>
+
+      <div class="process-step" style="min-width: 130px;">
+        <img src="static/img/Partner_Logo_2.png" style="width: 100%;">
+      </div>
+
+      <div class="process-step" style="min-width: 130px;">
+        <img src="static/img/Partner_Logo_3.png" style="width: 100%;">
+      </div>
+
+      <div class="process-step" style="min-width: 130px;">
+        <img src="static/img/Partner_Logo_4.png" style="width: 100%;">
+      </div>
+
+      <div class="process-step" style="min-width: 130px;">
+        <img src="static/img/Partner_Logo_5.png" style="width: 100%;">
+      </div>
+
+      <div class="process-step" style="min-width: 130px;">
+        <img src="static/img/Partner_Logo_6.png" style="width: 100%;">
+      </div>
+
+
     </div>
   </div>
 
