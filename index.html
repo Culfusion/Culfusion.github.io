@@ -1,660 +1,721 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WT3BSGK681"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WT3BSGK681"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-WT3BSGK681');
-</script>
+    gtag('config', 'G-WT3BSGK681');
+  </script>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const navLinks = document.querySelectorAll('.w3-button.text24');
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const navLinks = document.querySelectorAll('.w3-button.text24');
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      // Remove 'selected' class from all links
-      navLinks.forEach(item => item.classList.remove('selected'));
+      navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+          // Remove 'selected' class from all links
+          navLinks.forEach(item => item.classList.remove('selected'));
 
-      // Add 'selected' class to the clicked link
-      this.classList.add('selected');
+          // Add 'selected' class to the clicked link
+          this.classList.add('selected');
+        });
+      });
     });
-  });
-});
-</script>
-<script type="text/javascript">
-  (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "tb2zw4yjtg");
-</script>
-<link rel="icon" type="image/png" href="/static/img/favicon.png"/> 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Culfusion - Food and beverage business consultants</title>
-<meta name="description" content="Culfusion is India’s premier food consulting firm. We bring your food business dream to life with expert support in recipe development, kitchen setup, staff training, overall business development, and consulting, guiding you to market success">
-<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<link rel="stylesheet" type="text/css" href="static/css/style.css">
-
-<style>
-  
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-
-body, html {
-height: 100%;
-}
-
-/* Fonts */
-@font-face {
-font-family: 'jamal'; 
-src: url('static/font/Jamel.otf');
-}
-
-@font-face {
-font-family: 'cormorant'; 
-src: url('static/font/CormorantInfant-Regular.ttf');
-}
-
-.largetext70 {
-font-family: "jamal";
-font-size: 4vw;
-text-align: center;
-}
-
-.text24 {
-font-family: "cormorant";
-font-size: 1.25vw;
-text-align: center;
-}
-
-.center {
-height: auto;
-margin: 0 auto;
-padding: 12vh;
-position: relative;
-}
-
-.blackbgimg{
-background-image: url('static/img/Black BG small.png');
-background-repeat: repeat;
-}
-
-.whitebgimg{
-background-image: url('static/img/White BG small.png');
-background-repeat: repeat;
-}
-
-.barimglogo {
-width: 250;
-height: 100;
-object-fit: contain;
-}
-
-#logoimgcontainer {
-width: auto;
-height: auto;
-max-width: 550px;
-min-height: 175px;
-text-align: center;
-margin: auto auto;
-position: relative;
-}
-
-#logoimgcontainer img {
-width: 100%;
-height: 100%;
-object-fit: contain;
-text-align: center;
-margin: auto auto;
-position: relative;
-
-} 
-
-#topbarimgcontainer {
-width: auto;
-height: auto;
-max-width: 55px;
-min-height: 55px;
-padding: 3px;
-text-align: center;
-margin: auto auto;
-position: relative;
-}
-
-#topbarimgcontainer img {
-width: 100%;
-height: 100%;
-object-fit: contain;
-text-align: center;
-margin: auto auto;
-position: relative;
-
-} 
-           
-.btn {
-border-radius: 3px;
-position: relative;
-align-items: center;
-justify-content: center;
-border: 1.5px solid black;
-padding: 14px 24px;
-font-size: 18px;
-background-size: 300%;
-transition: all 0.6s;
-}
-
-.btn:hover {
-background-position: 100%;
-transform: translateY(0.5rem);
-}
-
-.btn:active {
-scale: 1.2;
-}
-
-.floating {  
-animation-name: floating;
-animation-duration: 5s;
-animation-iteration-count: infinite;
-animation-timing-function: ease-in-out;
-margin-left: 30px;
-margin-top: 5px;
-}
- 
-@keyframes floating {
-0% { transform: translate(0,  0px); }
-50%  { transform: translate(0, 5px) scale(1.01); }
-100%   { transform: translate(0, -0px); }    
-}
-
-
-.flexcontainer {
-display: flex;
-justify-content: space-between;
-}
-
-.flexitem {
-flex: 1;
-margin: 0px 15px;
-width: 16.66%;
-min-height:320px;
-}
-
-
-.flexitem img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-margin: 0;
-box-shadow: none;
-} 
-
-.flexitemlong {
-flex: 1;
-margin: 0px 15px;
-width: 70%;
-}
-
-.flexitemlongimgdiv {
-flex: 1;
-margin: 0px 15px;
-width: 30%;
-} 
-
-.flexitemlongimgdiv img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-margin: 0;
-box-shadow: none;
-} 
-
-.longcard {
-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-transition: 0.3s;
-width: 40%;
-display: flex;
-flex-direction: row-reverse;
-overflow: hidden;
-}
-
-.longcontainer {
-padding: 4px 32px;
-width: 500px;
-flex: 1;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-text-align: center;
-}
-
-.longcontainer2 {
-padding: 2px 16px;
-flex: 1;
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-text-align: center;
-flex-wrap: wrap;
-gap: 20px 50px;
-}
-
-.image-container {
-flex: 1;
-}
-.image-container img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
-
-.divider {
-  width: 2px;
-  background-color: #ffffff;
-  margin: 0 20px;
-}
-
-.servicecontainer1 {
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: stretch;
-padding-right: 2.5%;
-padding-left: 2.5%;
-}
-
-.servicecontainer2 {
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: center;
-height: 800px;
-width: 100%;
-}
-
-.founder-img {
-width: 40%;
-height: 100%;
-object-fit: cover;
-background-color: #ffffff;
-padding: 2px;
-}
-
-.founder-img-container {
-width: 100%;
-align-items: center;
-text-align: center;
-padding-bottom: 5%;
-}
-
-.santo-logo-img {
-align-items: center;
-text-align: center;
-object-fit: cover;
-
-}
-
-/*--- General Mobile Styles ---*/
-
-/* This meta tag is already in your HTML but is crucial for mobile responsiveness. It tells the browser to set the viewport width to the device's screen width and not to scale it. */
-@media screen and (max-width: 768px) {
-
-/* Changes font sizes to be a fixed size instead of viewport units, making them readable on smaller screens. */
-.largetext70 {
-  font-size: 3rem !important; /* using !important to override the inline style */
-}
-
-.text24 {
-  font-size: 1rem !important;
-}
-
-/* Adjusts padding for mobile screens to give more vertical space and less horizontal. */
-.center {
-  padding: 10vh 5vw;
-}
-
-/*--- Navbar adjustments for mobile ---*/
-
-.w3-top {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.w3-top a {
-  font-size: 1.5rem !important;
-}
-
-/* Hides the logo in the navbar on mobile to save space. */
-#topbarimgcontainer {
-  display: none;
-}
-
-/*--- Main Homepage (Homepage) section ---*/
-
-#logoimgcontainer img {
-  max-width: 20rem;
-  min-height: 5rem;
-}
-
-/* Adjusts the "Get in touch" button for mobile screens. */
-.btn {
-  padding: 10px 20px;
-  font-size: 16px;
-}
-
-/*--- What we do (Services) section ---*/
-
-/* Changes the flexbox layout to stack items vertically on mobile. */
-.flexcontainer {
-  flex-direction: column;
-  gap: 20px; /* Adds space between the stacked items */
-}
-
-.flexitem {
-  min-height: auto;
-  width: 90%;
-  margin: 0 auto;
-}
-
-.longcontainer2 {
-  flex-direction: column;
-  gap: 20px;
-}
-
-.longcard {
-  flex-direction: column; /* Stacks image and text vertically */
-  width: 100%;
-  margin: 0 auto;
-}
-
-.longcontainer {
-  width: 100%;
-  padding: 16px;
-}
-
-/* reverses the order for the second catering card to stack logically */
-.longcard:nth-child(2) {
-  flex-direction: column-reverse;
-}
-
-/*--- Who we are (About) section ---*/
-
-/* Stacks the two columns vertically on mobile and hides the divider. */
-.servicecontainer1 {
-  flex-direction: column;
-  padding: 0;
-}
-
-.divider {
-  display: none;
-}
-
-.servicecontainer2 {
-  height: auto;
-  margin-bottom: 30px; /* Adds space between the two sections */
-}
-
-.founder-img-container {
-  padding-bottom: 20px;
-}
-
-.founder-img {
-  width: 80%;
-}
-
-.santo-logo-img {
-  width: 80%;
-}
-}
-
-
-.w3-card {
-  transition: transform 0.3s ease, box-shadow 0.5s ease;
-}
-
-.w3-card:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
-}
-
-.longcard {
-  transition: transform 0.3s ease, box-shadow 0.5s ease;
-}
-
-.longcard:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
-}
-
-.selected {
-  border-bottom: 2px solid #000; /* You can change the color and thickness */
-}
-
-@media (max-width: 600px) {
-  /* Stacks the 'Pop-up' and 'Private Events' cards vertically */
-  .flexcontainer {
-    flex-direction: column;
-  }
-  
-  /* Makes each card fill the available width */
-  .longcard {
-    width: 100%;
-    height: auto !important; /* Overrides the inline height to allow content to flow */
-    flex-direction: column; /* Stacks the image and text within the card */
-    margin-bottom: 20px; /* Adds space between the stacked cards */
-  }
-
-  /* Ensures the image takes up a reasonable width on mobile */
-  .image-container img {
-    width: 100%;
-    height: auto;
-  }
-  
-  /* Adjusts the text container for stacking */
-  .longcontainer {
-    padding: 10px;
-    text-align: center; /* Centers the text */
-  }
-
-  /* Re-orders the content on smaller screens if needed
+  </script>
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "tb2zw4yjtg");
+  </script>
+  <link rel="icon" type="image/png" href="/static/img/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Culfusion - Food and beverage business consultants</title>
+  <meta name="description"
+    content="Culfusion is India’s premier restaurant and food consulting firm. We bring your hospitality business dream to life with expert support in recipe development, kitchen setup, staff training, and overall business development, guiding you to market success">
+  <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Raleway", sans-serif
+    }
+
+    body,
+    html {
+      height: 100%;
+    }
+
+    /* Fonts */
+    @font-face {
+      font-family: 'jamal';
+      src: url('static/font/Jamel.otf');
+    }
+
+    @font-face {
+      font-family: 'cormorant';
+      src: url('static/font/CormorantInfant-Regular.ttf');
+    }
+
+    .largetext70 {
+      font-family: "jamal";
+      font-size: 4vw;
+      text-align: center;
+    }
+
+    .text24 {
+      font-family: "cormorant";
+      font-size: 1.25vw;
+      text-align: center;
+    }
+
+    .center {
+      height: auto;
+      margin: 0 auto;
+      padding: 12vh;
+      position: relative;
+    }
+
+    .blackbgimg {
+      background-image: url('static/img/Black BG small.png');
+      background-repeat: repeat;
+    }
+
+    .whitebgimg {
+      background-image: url('static/img/White BG small.png');
+      background-repeat: repeat;
+    }
+
+    .barimglogo {
+      width: 250;
+      height: 100;
+      object-fit: contain;
+    }
+
+    #logoimgcontainer {
+      width: auto;
+      height: auto;
+      max-width: 550px;
+      min-height: 175px;
+      text-align: center;
+      margin: auto auto;
+      position: relative;
+    }
+
+    #logoimgcontainer img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      text-align: center;
+      margin: auto auto;
+      position: relative;
+
+    }
+
+    #topbarimgcontainer {
+      width: auto;
+      height: auto;
+      max-width: 55px;
+      min-height: 55px;
+      padding: 3px;
+      text-align: center;
+      margin: auto auto;
+      position: relative;
+    }
+
+    #topbarimgcontainer img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      text-align: center;
+      margin: auto auto;
+      position: relative;
+
+    }
+
+    .btn {
+      border-radius: 3px;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid black;
+      padding: 14px 24px;
+      font-size: 18px;
+      background-size: 300%;
+      transition: all 0.6s;
+    }
+
+    .btn:hover {
+      background-position: 100%;
+      transform: translateY(0.5rem);
+    }
+
+    .btn:active {
+      scale: 1.2;
+    }
+
+    .floating {
+      animation-name: floating;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+      margin-left: 30px;
+      margin-top: 5px;
+    }
+
+    @keyframes floating {
+      0% {
+        transform: translate(0, 0px);
+      }
+
+      50% {
+        transform: translate(0, 5px) scale(1.01);
+      }
+
+      100% {
+        transform: translate(0, -0px);
+      }
+    }
+
+
+    .flexcontainer {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .flexitem {
+      flex: 1;
+      margin: 0px 15px;
+      width: 16.66%;
+      min-height: 320px;
+    }
+
+
+    .flexitem img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      margin: 0;
+      box-shadow: none;
+    }
+
+    .flexitemlong {
+      flex: 1;
+      margin: 0px 15px;
+      width: 70%;
+    }
+
+    .flexitemlongimgdiv {
+      flex: 1;
+      margin: 0px 15px;
+      width: 30%;
+    }
+
+    .flexitemlongimgdiv img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      margin: 0;
+      box-shadow: none;
+    }
+
+    .longcard {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      width: 30%;
+      display: flex;
+      flex-direction: row-reverse;
+      overflow: hidden;
+    }
+
+    .longcontainer {
+      padding: 4px 32px;
+      width: 500px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .longcontainer2 {
+      padding: 2px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      flex-wrap: wrap;
+      gap: 20px 50px;
+    }
+
+    .image-container {
+      flex: 1;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .divider {
+      width: 2px;
+      background-color: #ffffff;
+      margin: 0 20px;
+    }
+
+    .servicecontainer1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: stretch;
+      padding-right: 2.5%;
+      padding-left: 2.5%;
+    }
+
+    .servicecontainer2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 800px;
+      width: 100%;
+    }
+
+    .founder-img {
+      width: 40%;
+      height: 100%;
+      object-fit: cover;
+      background-color: #ffffff;
+      padding: 2px;
+    }
+
+    .founder-img-container {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 5%;
+    }
+
+    .santo-logo-img {
+      align-items: center;
+      text-align: center;
+      object-fit: cover;
+
+    }
+
+    /*--- General Mobile Styles ---*/
+
+    /* This meta tag is already in your HTML but is crucial for mobile responsiveness. It tells the browser to set the viewport width to the device's screen width and not to scale it. */
+    @media screen and (max-width: 768px) {
+
+      /* Changes font sizes to be a fixed size instead of viewport units, making them readable on smaller screens. */
+      .largetext70 {
+        font-size: 3rem !important;
+        /* using !important to override the inline style */
+      }
+
+      .text24 {
+        font-size: 1rem !important;
+      }
+
+      /* Adjusts padding for mobile screens to give more vertical space and less horizontal. */
+      .center {
+        padding: 10vh 5vw;
+      }
+
+      /*--- Navbar adjustments for mobile ---*/
+
+      .w3-top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .w3-top a {
+        font-size: 1.5rem !important;
+      }
+
+      /* Hides the logo in the navbar on mobile to save space. */
+      #topbarimgcontainer {
+        display: none;
+      }
+
+      /*--- Main Homepage (Homepage) section ---*/
+
+      #logoimgcontainer img {
+        max-width: 20rem;
+        min-height: 5rem;
+      }
+
+      /* Adjusts the "Get in touch" button for mobile screens. */
+      .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+
+      /*--- What we do (Services) section ---*/
+
+      /* Changes the flexbox layout to stack items vertically on mobile. */
+      .flexcontainer {
+        flex-direction: column;
+        gap: 20px;
+        /* Adds space between the stacked items */
+      }
+
+      .flexitem {
+        min-height: auto;
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      .longcontainer2 {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .longcard {
+        flex-direction: column;
+        /* Stacks image and text vertically */
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .longcontainer {
+        width: 100%;
+        padding: 16px;
+      }
+
+      /* reverses the order for the second catering card to stack logically */
+      .longcard:nth-child(2) {
+        flex-direction: column-reverse;
+      }
+
+      /*--- Who we are (About) section ---*/
+
+      /* Stacks the two columns vertically on mobile and hides the divider. */
+      .servicecontainer1 {
+        flex-direction: column;
+        padding: 0;
+      }
+
+      .divider {
+        display: none;
+      }
+
+      .servicecontainer2 {
+        height: auto;
+        margin-bottom: 30px;
+        /* Adds space between the two sections */
+      }
+
+      .founder-img-container {
+        padding-bottom: 20px;
+      }
+
+      .founder-img {
+        width: 80%;
+      }
+
+      .santo-logo-img {
+        width: 80%;
+      }
+    }
+
+
+    .w3-card {
+      transition: transform 0.3s ease, box-shadow 0.5s ease;
+    }
+
+    .w3-card:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .longcard {
+      transition: transform 0.3s ease, box-shadow 0.5s ease;
+    }
+
+    .longcard:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .selected {
+      border-bottom: 2px solid #000;
+      /* You can change the color and thickness */
+    }
+
+    @media (max-width: 600px) {
+
+      /* Stacks the 'Pop-up' and 'Private Events' cards vertically */
+      .flexcontainer {
+        flex-direction: column;
+      }
+
+      /* Makes each card fill the available width */
+      .longcard {
+        width: 100%;
+        height: auto !important;
+        /* Overrides the inline height to allow content to flow */
+        flex-direction: column;
+        /* Stacks the image and text within the card */
+        margin-bottom: 20px;
+        /* Adds space between the stacked cards */
+      }
+
+      /* Ensures the image takes up a reasonable width on mobile */
+      .image-container img {
+        width: 100%;
+        height: auto;
+      }
+
+      /* Adjusts the text container for stacking */
+      .longcontainer {
+        padding: 10px;
+        text-align: center;
+        /* Centers the text */
+      }
+
+      /* Re-orders the content on smaller screens if needed
      This example reorders the Private Events card to have text on top of the image */
-  .longcard:nth-of-type(2) {
-    flex-direction: column-reverse;
-  }
+      .longcard:nth-of-type(2) {
+        flex-direction: column-reverse;
+      }
 
-  /* Adjust font sizes for better mobile readability */
-  .text24 h4 {
-    font-size: 4vw !important;
-  }
+      /* Adjust font sizes for better mobile readability */
+      /* Section Headers */
+      h2.text24 {
+        font-size: 2rem !important;
+      }
 
-  .text24 p {
-    font-size: 3.5vw !important;
-  }
-}
-</style>
-</style>
+      /* Sub-headers (Cards) */
+      .text24 h4 {
+        font-size: 1.4rem !important;
+      }
+
+      .text24 p {
+        font-size: 1rem !important;
+      }
+    }
+  </style>
+  </style>
 
 </head>
 
 
 <body>
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-center w3-white w3-padding-large" id="myNavbar">
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-center w3-white w3-padding-large" id="myNavbar">
 
       <a href="#Services" class=" w3-button text24" style="font-size: 2.5vh;">What we do</a>
 
-    <div class="w3-button" id="topbarimgcontainer">
-      <a href="#home">
-      <img src="static/img/Logo.png" >
-    </a>
-    </div>
+      <div class="w3-button" id="topbarimgcontainer">
+        <a href="#home">
+          <img src="static/img/Logo.png" alt="Culfusion Food Consulting Logo">
+        </a>
+      </div>
 
       <a href="#About" class=" w3-button text24" style="font-size: 2.5vh;">Who we are</a>
 
-  </div>
-</div>
-
-<!-- Homepage -->
-<div class="w3-container w3-black blackbgimg" style="min-height:100vh;" id="home">
-  <div class="center" >
-
-    <div class="w3-center flexcontainer floating" id="logoimgcontainer">
-      <img src="static/img/Logopartial.png">
     </div>
+  </div>
 
-    <h2 class="w3-center largetext70 w3-text-white" style="font-size: 6vh;">Culinary x  fusion</h2>
-    <h2 class="w3-center largetext70 w3-text-white" style="font-size: 6vh;">Where experiences are built through</h2>
-    <h2 class="w3-center largetext70 w3-text-white" style="font-size: 6vh;">taste + texture + innovation</h2>
+  <!-- Homepage -->
+  <div class="w3-container w3-black blackbgimg" style="min-height:100dvh;" id="home">
+    <div class="center">
 
-    <p class="text24 w3-center w3-text-white">Are you a passionate food entrepreneur ready to make your mark in the Food and beverage industry?</p>
-    <p class="text24 w3-center w3-text-white">Whether you're just starting out or looking to scale your existing business, we're here to fuel your success.</p>
-  
-    <div class="w3-padding-top-24" style="text-align: center;">
-      <a href="https://wa.me/916382438585" target="_blank">
-      <button class="btn">Get in touch with us</button>
-      </a>
+      <div class="w3-center flexcontainer floating" id="logoimgcontainer">
+        <img src="static/img/Logopartial.png" alt="Culfusion Logo Mark">
+      </div>
+
+      <h1 class="w3-center largetext70 w3-text-white" style="font-size: 6vh;">Culinary x fusion</h1>
+      <h2 class="w3-center largetext70 w3-text-white" style="font-size: 6vh;">Where experiences are built through</h2>
+      <h2 class="w3-center largetext70 w3-text-white" style="font-size: 6vh;">taste + texture + innovation</h2>
+
+      <p class="text24 w3-center w3-text-white">Are you a passionate food entrepreneur ready to make your mark in the
+        Food and beverage industry?</p>
+      <p class="text24 w3-center w3-text-white">Whether you're just starting out or looking to scale your existing
+        business, we're here to fuel your success.</p>
+
+      <div class="w3-padding-top-24" style="text-align: center;">
+        <a href="https://wa.me/916382438585" target="_blank">
+          <button class="btn">Get in touch with us</button>
+        </a>
+      </div>
+
     </div>
-  
   </div>
-</div>
 
-<!-- what we do -->
-<div class="w3-container w3-white whitebgimg" style="min-height:100vh;" id="Services">
-  <div class="center" style="padding-top: 8vh;" >
+  <!-- what we do -->
+  <div class="w3-container w3-white whitebgimg" style="min-height:100dvh;" id="Services">
+    <div class="center" style="padding-top: 8vh;">
 
-    <h2 class="w3-center text24 w3-text-black" style="font-size: 4vh;">What we do - Food and beverage Business Consulting</h2>
+      <h2 class="w3-center text24 w3-text-black" style="font-size: 4vh;">What we do - Food and beverage Business
+        Consulting</h2>
 
-    <p class="text24 w3-center w3-text-black">We craft bespoke solutions for diverse culinary ventures, from cozy cafés to upscale restaurants</p>
+      <p class="text24 w3-center w3-text-black">We craft bespoke solutions for diverse culinary ventures, from cozy
+        cafés to upscale restaurants</p>
 
-    <!-- F&B Buisness consulting -->
-    <div class="flexcontainer w3-center w3-margin-top">
+      <!-- F&B Buisness consulting -->
+      <div class="flexcontainer w3-center w3-margin-top">
 
-      <div class="flexitem">
-        <div class="w3-card w3-white" >
-          <img src="static/img/Cafe.png">
-        <p class="text24" style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh;">Cafe</p>
+        <div class="flexitem">
+          <div class="w3-card w3-white">
+            <img src="static/img/Cafe.png" alt="Cafe Consulting Services">
+            <p class="text24" style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh;">Cafe</p>
+          </div>
         </div>
+
+        <div class="flexitem">
+          <div class="w3-card w3-white">
+            <img src="static/img/Kiosks.png" alt="Food Kiosk Setup">
+            <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Kiosks</p>
+          </div>
+        </div>
+
+        <div class="flexitem">
+          <div class="w3-card w3-white">
+            <img src="static/img/Food Trucks.png" alt="Food Truck Business Consulting">
+            <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Food
+              Trucks</p>
+          </div>
+        </div>
+
+        <div class="flexitem">
+          <div class="w3-card w3-white">
+            <img src="static/img/Restobars.png" alt="Restobar Consulting and Setup">
+            <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Restobars
+            </p>
+          </div>
+        </div>
+
+        <div class="flexitem">
+          <div class="w3-card w3-white">
+            <img src="static/img/Cloud Kitchen.png" alt="Cloud Kitchen Business Model">
+            <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Cloud
+              Kitchen</p>
+          </div>
+        </div>
+
+        <div class="flexitem">
+          <div class="w3-card w3-white">
+            <img src="static/img/Restaurant.png" alt="Restaurant Consulting Services">
+            <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">
+              Restaurants</p>
+          </div>
+        </div>
+
       </div>
 
-      <div class="flexitem">
-        <div class="w3-card w3-white" >
-          <img src="static/img/Kiosks.png">
-          <p class="text24"  style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Kiosks</p>
-        </div>
-      </div>
+      <h2 class="w3-center text24 w3-text-black" style="font-size: 4vh;">Niche Services</h2>
 
-      <div class="flexitem">
-        <div class="w3-card w3-white" >
-          <img src="static/img/Food Trucks.png">
-          <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Food Trucks</p>
-        </div>
-      </div>
+      <!-- Pop-ups, Recipe Creation and Private Caterings -->
+      <div class="flexcontainer w3-center w3-margin-top">
 
-      <div class="flexitem">
-        <div class="w3-card w3-white" >
-          <img src="static/img/Restobars.png">
-          <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Restobars</p>
-        </div>
-      </div>
+        <div class="longcontainer2">
 
-      <div class="flexitem">
-        <div class="w3-card w3-white" >
-          <img src="static/img/Cloud Kitchen.png">
-          <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Cloud Kitchen</p>
-        </div>
-      </div>
+          <div class="longcard w3-white" style="height: 220px;">
+            <div class="image-container">
+              <img src="static/img/Pop ups.png" alt="Food Pop-up Events">
+            </div>
+            <div class="longcontainer">
+              <h4 class="text24" style="font-size: 2.75vh;">Pop - up</h4>
+              <p class="text24" style="padding-bottom: 5px; margin-top: 0; font-size: 2vh;">Experience culinary magic at
+                our monthly themed pop-ups, where food influencers and foodies unite</p>
+            </div>
+          </div>
 
-      <div class="flexitem">
-        <div class="w3-card w3-white" >
-          <img src="static/img/Restaurant.png">
-          <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Restaurants</p>
+          <div class="longcard w3-white" style="height: 220px;">
+            <div class="longcontainer">
+              <h4 class="text24" style="font-size: 2.75vh;">Recipe Creation</h4>
+              <p class="text24" style="padding-bottom: 5px; margin-top: 0; font-size: 2vh;">Create unique and flavorful
+                recipes that capture the essence of your culinary vision</p>
+            </div>
+            <div class="image-container">
+              <img src="static/img/recpies.jpg" alt="Recipe Creation Services">
+            </div>
+          </div>
+
+          <div class="longcard w3-white" style="height: 220px;">
+            <div class="longcontainer">
+              <h4 class="text24" style="font-size: 2.75vh;">Private Events</h4>
+              <p class="text24" style="padding-bottom: 5px; margin-top: 0; font-size: 2vh;">Elevate your events with
+                bespoke menus and impeccable service, tailored to your unique taste and style</p>
+            </div>
+            <div class="image-container">
+              <img src="static/img/Catering.png" alt="Private Event Catering Services">
+            </div>
+          </div>
+
+
+
         </div>
       </div>
-  
     </div>
-
-    <h2 class="w3-center text24 w3-text-black" style="font-size: 4vh;">Catering</h2>
-
-     <!-- Pop-ups and Private Caterings -->
-    <div class="flexcontainer w3-center w3-margin-top">
-      
-    <div class="longcontainer2">
-
-      <div class="longcard w3-white" style="height: 220px;">
-        <div class="image-container">
-            <img src="static/img/Pop ups.png">
-        </div>
-        <div class="longcontainer">
-            <h4 class="text24" style="font-size: 2.75vh;">Pop - up</h4>
-            <p class="text24" style="padding-bottom: 5px; margin-top: 0; font-size: 2vh;">Experience culinary magic at our monthly themed pop-ups, where food influencers and foodies unite</p>
-        </div>
-    </div>
-
-    <div class="longcard w3-white" style="height: 220px;">
-      <div class="longcontainer">
-        <h4 class="text24"  style="font-size: 2.75vh;">Private Events</h4>
-          <p class="text24" style="padding-bottom: 5px; margin-top: 0; font-size: 2vh;">Elevate your events with bespoke menus and impeccable service, tailored to your unique taste and style</p> 
-      </div>
-      <div class="image-container">
-          <img src="static/img/Catering.png">
-      </div>
   </div>
 
+  <!-- who we are -->
+  <div class="w3-container w3-black blackbgimg" style="min-height:100dvh;" id="About">
+    <div class="center" style=" align-content: center; padding: 2.5%; padding-left: 5%; padding-right: 5%;">
 
-    
-  </div>
-  </div>
-</div>
-</div>
+      <h2 class="w3-center text24 w3-text-white" style="font-size: 4vh; padding-top: 5%; padding: 2.5%;">Who we are -
+        Our brands</h2>
 
-<!-- who we are -->
-<div class="w3-container w3-black blackbgimg" style="min-height:100vh;" id="About">
-  <div class="center" style=" align-content: center; padding: 2.5%; padding-left: 5%; padding-right: 5%;">
-
-    <h2 class="w3-center text24 w3-text-white" style="font-size: 4vh; padding-top: 5%; padding: 2.5%;">Who we are - Our brands</h2>
-
-    <div class="servicecontainer1">
+      <div class="servicecontainer1">
 
         <!-- Founder & santoCooks -->
         <div class="servicecontainer2">
 
           <h2 class="w3-center text24 w3-text-white" style="font-size: 3vh;">Our Founder</h2>
 
-          <p class="text24" style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh;">A dynamic and innovative young founder with a strong foundation in the culinary industry, having successfully managed a diverse range of projects, from small businesses to chic chain restobars, showcasing a seamless blend of creativity and expertise.  </p>
-          
+          <p class="text24" style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh;">A dynamic
+            and innovative young founder with a strong foundation in the culinary industry, having successfully managed
+            a diverse range of projects, from small businesses to chic chain restobars, showcasing a seamless blend of
+            creativity and expertise. </p>
+
           <!-- founder img
           <div class="w3-center founder-img-container">
             <img src="/static/img/Founderimg.jpg" class="founder-img w3-center">
           </div> -->
 
-          <div class="w3-center w3-container" >
-            <img src="static/img/SantoCooks Logo 2 white.png" class="santo-logo-img" style="width: 50%;">
+          <div class="w3-center w3-container">
+            <img src="static/img/SantoCooks Logo 2 white.png" class="santo-logo-img" style="width: 50%;"
+              alt="SantoCooks Logo">
           </div>
 
-           <!-- insta button -->
+          <!-- insta button -->
           <div style="text-align: center; padding-top: 5%;">
             <a href="https://www.instagram.com/santocooks/">
-            <button class="btn">
-              <img src="static/img/Insta Logo.png" width="30" height="25">
-              @santocooks
-            </button>
+              <button class="btn">
+                <img src="static/img/Insta Logo.png" width="30" height="25" alt="Instagram Logo">
+                @santocooks
+              </button>
             </a>
           </div>
 
@@ -667,30 +728,33 @@ object-fit: cover;
 
           <h2 class="w3-center text24 w3-text-white" style="font-size: 3vh;">Our Community</h2>
 
-          <p class="text24" style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh;">Culfusion is a vibrant community that brings food lovers together to explore, experience, and celebrate the diverse world of culinary arts. We're more than just an organization; we're a melting pot of flavors, cultures, and passionate foodies. </p>
+          <p class="text24" style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh;">Culfusion is
+            a vibrant community that brings food lovers together to explore, experience, and celebrate the diverse world
+            of culinary arts. We're more than just an organization; we're a melting pot of flavors, cultures, and
+            passionate foodies. </p>
 
-          <div class="w3-center w3-container" >
-            <img src="static/img/Text with logo and byline - white.png" class="santo-logo-img" style="width: 50%;">
+          <div class="w3-center w3-container">
+            <img src="static/img/Text with logo and byline - white.png" class="santo-logo-img" style="width: 50%;"
+              alt="Culfusion Community Logo">
           </div>
 
           <!-- insta button -->
           <div style="text-align: center; padding-top: 5%;">
-          <a href="https://www.instagram.com/culfusioncuisine/">
-          <button class="btn">
-            <img src="static/img/Insta Logo.png" width="30" height="25">
-            @culfusioncuisine
-          </button>
-          </a>
-        </div>
+            <a href="https://www.instagram.com/culfusioncuisine/">
+              <button class="btn">
+                <img src="static/img/Insta Logo.png" width="30" height="25" alt="Instagram Logo">
+                @culfusioncuisine
+              </button>
+            </a>
+          </div>
 
         </div>
 
+      </div>
     </div>
   </div>
-</div>
 
-    
-<footer class="w3-container w3-center w3-white w3-padding-small">
-  <p class="w3 w3-text-black">©Copyright 2025 - Culfusion & SantoCooks</p>
-</footer>
 
+  <footer class="w3-container w3-center w3-white w3-padding-small">
+    <p class="w3 w3-text-black">©Copyright 2025 - Culfusion & SantoCooks</p>
+  </footer>
