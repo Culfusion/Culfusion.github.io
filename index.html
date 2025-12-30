@@ -356,12 +356,33 @@
       }
 
       .w3-top a {
-        font-size: 1.5rem !important;
+        font-size: 1rem !important;
       }
 
       /* Hides the logo in the navbar on mobile to save space. */
       #topbarimgcontainer {
-        display: none;
+        display: block;
+        max-width: 40px;
+        /* Slightly smaller logo for mobile */
+        min-height: 40px;
+        /* Removed order: 2 to respect DOM order (Link - Logo - Link) */
+      }
+
+      #myNavbar {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        /* Spread items out */
+        align-items: center;
+        width: 100%;
+      }
+
+      /* Ensure links take equal space to keep logo centered */
+      #myNavbar a {
+        flex: 1;
+        text-align: center;
+        /* keep text near logo or center of their space */
       }
 
       /*--- Main Homepage (Homepage) section ---*/
@@ -692,72 +713,125 @@
         cafés to upscale restaurants</p>
 
       <!-- F&B Buisness consulting -->
+      <!-- F&B Buisness consulting -->
       <div class="flexcontainer w3-center w3-margin-top">
 
-        <div class="flexitem">
-          <div class="w3-card w3-white">
-            <img src="static/img/Cafe.png" alt="Cafe Consulting Services">
-            <p class="text24" style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh;">Cafe</p>
-            <div class="service-details">
-              <p style="padding: 0 10px 10px 10px; margin: 0;">Barista training, menu design, and interior flow.</p>
+        <div class="flexitem flip-card-container">
+          <div class="flip-card-inner w3-card">
+            <div class="flip-card-front w3-white">
+              <img src="static/img/Cafe.png" alt="Cafe Consulting Services">
+              <p class="text24" style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh;">Cafe</p>
+            </div>
+            <div class="flip-card-back w3-white">
+              <h4 class="text24"
+                style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh; font-weight: normal;">
+                Cafe</h4>
+              <ul class="text24" style="padding: 0 15px; margin: 0; text-align: left;">
+                <li>Staff training</li>
+                <li>Menu design</li>
+                <li>Interior flow</li>
+              </ul>
             </div>
           </div>
         </div>
 
-        <div class="flexitem">
-          <div class="w3-card w3-white">
-            <img src="static/img/Kiosks.png" alt="Food Kiosk Setup">
-            <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Kiosks</p>
-            <div class="service-details">
-              <p style="padding: 0 10px 10px 10px; margin: 0;">Efficient workflow, maximum space utility, grab-and-go
-                menus.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="flexitem">
-          <div class="w3-card w3-white">
-            <img src="static/img/Food Trucks.png" alt="Food Truck Business Consulting">
-            <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Food
-              Trucks</p>
-            <div class="service-details">
-              <p style="padding: 0 10px 10px 10px; margin: 0;">Vehicle layout, concise menu design, quick operations.
+        <div class="flexitem flip-card-container">
+          <div class="flip-card-inner w3-card">
+            <div class="flip-card-front w3-white">
+              <img src="static/img/Kiosks.png" alt="Food Kiosk Setup">
+              <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Kiosks
               </p>
             </div>
-          </div>
-        </div>
-
-        <div class="flexitem">
-          <div class="w3-card w3-white">
-            <img src="static/img/Restobars.png" alt="Restobar Consulting and Setup">
-            <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Restobars
-            </p>
-            <div class="service-details">
-              <p style="padding: 0 10px 10px 10px; margin: 0;">Licensing guidance, mixology, and bar station setup.</p>
+            <div class="flip-card-back w3-white">
+              <h4 class="text24"
+                style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh; font-weight: normal;">
+                Kiosks</h4>
+              <ul class="text24" style="padding: 0 15px; margin: 0; text-align: left;">
+                <li>Efficient workflow</li>
+                <li>Maximum space utility</li>
+                <li>Grab-and-go menus</li>
+              </ul>
             </div>
           </div>
         </div>
 
-        <div class="flexitem">
-          <div class="w3-card w3-white">
-            <img src="static/img/Cloud Kitchen.png" alt="Cloud Kitchen Business Model">
-            <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Cloud
-              Kitchen</p>
-            <div class="service-details">
-              <p style="padding: 0 10px 10px 10px; margin: 0;">Aggregator integration, packaging solutions, high-volume
-                prep.</p>
+        <div class="flexitem flip-card-container">
+          <div class="flip-card-inner w3-card">
+            <div class="flip-card-front w3-white">
+              <img src="static/img/Food Trucks.png" alt="Food Truck Business Consulting">
+              <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Food
+                Trucks</p>
+            </div>
+            <div class="flip-card-back w3-white">
+              <h4 class="text24"
+                style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh; font-weight: normal;">
+                Food Trucks</h4>
+              <ul class="text24" style="padding: 0 15px; margin: 0; text-align: left;">
+                <li>Vehicle layout</li>
+                <li>Concise menu design</li>
+                <li>Quick operations</li>
+              </ul>
             </div>
           </div>
         </div>
 
-        <div class="flexitem">
-          <div class="w3-card w3-white">
-            <img src="static/img/Restaurant.png" alt="Restaurant Consulting Services">
-            <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">
-              Restaurants</p>
-            <div class="service-details">
-              <p style="padding: 0 10px 10px 10px; margin: 0;">Full-scale concept, detailed kitchen planning, staff
-                training.</p>
+        <div class="flexitem flip-card-container">
+          <div class="flip-card-inner w3-card">
+            <div class="flip-card-front w3-white">
+              <img src="static/img/Restobars.png" alt="Restobar Consulting and Setup">
+              <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">
+                Restobars
+              </p>
+            </div>
+            <div class="flip-card-back w3-white">
+              <h4 class="text24"
+                style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh; font-weight: normal;">
+                Restobars</h4>
+              <ul class="text24" style="padding: 0 15px; margin: 0; text-align: left;">
+                <li>Licensing guidance</li>
+                <li>Mixology</li>
+                <li>Bar station setup</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="flexitem flip-card-container">
+          <div class="flip-card-inner w3-card">
+            <div class="flip-card-front w3-white">
+              <img src="static/img/Cloud Kitchen.png" alt="Cloud Kitchen Business Model">
+              <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">Cloud
+                Kitchen</p>
+            </div>
+            <div class="flip-card-back w3-white">
+              <h4 class="text24"
+                style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh; font-weight: normal;">
+                Cloud Kitchen</h4>
+              <ul class="text24" style="padding: 0 15px; margin: 0; text-align: left;">
+                <li>Aggregator integration</li>
+                <li>Packaging solutions</li>
+                <li>High-volume prep</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="flexitem flip-card-container">
+          <div class="flip-card-inner w3-card">
+            <div class="flip-card-front w3-white">
+              <img src="static/img/Restaurant.png" alt="Restaurant Consulting Services">
+              <p class="text24" style="padding-bottom: 10px; padding-top: 10px; margin-top: 0; font-size: 2vh;">
+                Restaurants</p>
+            </div>
+            <div class="flip-card-back w3-white">
+              <h4 class="text24"
+                style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh; font-weight: normal;">
+                Restaurants</h4>
+              <ul class="text24" style="padding: 0 15px; margin: 0; text-align: left;">
+                <li>Full-scale concept</li>
+                <li>Detailed kitchen planning</li>
+                <li>Staff training</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -767,46 +841,68 @@
       <h2 class="w3-center text24 w3-text-black" style="font-size: 4vh;">Niche Services</h2>
 
       <!-- Pop-ups, Recipe Creation and Private Caterings -->
-      <div class="flexcontainer w3-center w3-margin-top">
+      <div class="flexcontainer niche-services-container w3-center w3-margin-top">
 
-        <div class="longcontainer2">
-
-          <div class="longcard w3-white" style="height: 220px;">
-            <div class="image-container">
+        <div class="flexitem flip-card-container">
+          <div class="flip-card-inner w3-card">
+            <div class="flip-card-front w3-white">
               <img src="static/img/Pop ups.png" alt="Food Pop-up Events">
+              <p class="text24" style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh;">Pop - up
+              </p>
             </div>
-            <div class="longcontainer">
-              <h4 class="text24" style="font-size: 2.75vh;">Pop - up</h4>
-              <p class="text24" style="padding-bottom: 5px; margin-top: 0; font-size: 2vh;">Experience culinary magic at
-                our monthly themed pop-ups, where food influencers and foodies unite</p>
-            </div>
-          </div>
-
-          <div class="longcard w3-white" style="height: 220px;">
-            <div class="longcontainer">
-              <h4 class="text24" style="font-size: 2.75vh;">Recipe Creation</h4>
-              <p class="text24" style="padding-bottom: 5px; margin-top: 0; font-size: 2vh;">Create unique and flavorful
-                recipes that capture the essence of your culinary vision</p>
-            </div>
-            <div class="image-container">
-              <img src="static/img/Recpies.jpg" alt="Recipe Creation Services">
+            <div class="flip-card-back w3-white">
+              <h4 class="text24"
+                style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh; font-weight: normal;">Pop
+                - up</h4>
+              <ul class="text24" style="padding: 0 15px; margin: 0; text-align: left;">
+                <li>Monthly themed events</li>
+                <li>Culinary magic experience</li>
+                <li>Influencer networking</li>
+              </ul>
             </div>
           </div>
-
-          <div class="longcard w3-white" style="height: 220px;">
-            <div class="longcontainer">
-              <h4 class="text24" style="font-size: 2.75vh;">Private Events</h4>
-              <p class="text24" style="padding-bottom: 5px; margin-top: 0; font-size: 2vh;">Elevate your events with
-                bespoke menus and impeccable service, tailored to your unique taste and style</p>
-            </div>
-            <div class="image-container">
-              <img src="static/img/Catering.png" alt="Private Event Catering Services">
-            </div>
-          </div>
-
-
-
         </div>
+
+        <div class="flexitem flip-card-container">
+          <div class="flip-card-inner w3-card">
+            <div class="flip-card-front w3-white">
+              <img src="static/img/Recpies.jpg" alt="Recipe Creation Services">
+              <p class="text24" style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh;">Recipe
+                Creation</p>
+            </div>
+            <div class="flip-card-back w3-white">
+              <h4 class="text24"
+                style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh; font-weight: normal;">
+                Recipe Creation</h4>
+              <ul class="text24" style="padding: 0 15px; margin: 0; text-align: left;">
+                <li>Unique & flavorful recipes</li>
+                <li>Capture culinary essence</li>
+                <li>Tailored vision execution</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="flexitem flip-card-container">
+          <div class="flip-card-inner w3-card">
+            <div class="flip-card-front w3-white">
+              <img src="static/img/Catering.png" alt="Private Event Catering Services">
+              <p class="text24" style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh;">Private
+                Events</p>
+            </div>
+            <div class="flip-card-back w3-white">
+              <h4 class="text24"
+                style="padding-bottom: 11px; padding-top: 11px; margin-top: 0; font-size: 2vh; font-weight: normal;">
+                Private Events</h4>
+              <ul class="text24" style="padding: 0 15px; margin: 0; text-align: left;">
+                <li>Bespoke menus</li>
+                <li>Impeccable service</li>
+                <li>Tailored to your style</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
