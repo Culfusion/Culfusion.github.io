@@ -50,561 +50,7 @@
 
   <link rel="stylesheet" type="text/css" href="static/css/style.css">
 
-  <style>
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: "Raleway", sans-serif
-    }
 
-    body,
-    html {
-      height: 100%;
-    }
-
-    /* Fonts */
-    @font-face {
-      font-family: 'jamal';
-      src: url('static/font/Jamel.otf');
-    }
-
-    @font-face {
-      font-family: 'cormorant';
-      src: url('static/font/CormorantInfant-Regular.ttf');
-    }
-
-    .largetext70 {
-      font-family: "jamal";
-      font-size: 4vw;
-      text-align: center;
-    }
-
-    .text24 {
-      font-family: "cormorant";
-      font-size: 1.25vw;
-      text-align: center;
-    }
-
-    .center {
-      height: auto;
-      margin: 0 auto;
-      padding: 12vh;
-      position: relative;
-    }
-
-    .blackbgimg {
-      background-image: url('static/img/Black BG small.png');
-      background-repeat: repeat;
-    }
-
-    .whitebgimg {
-      background-image: url('static/img/White BG small.png');
-      background-repeat: repeat;
-    }
-
-    .barimglogo {
-      width: 250;
-      height: 100;
-      object-fit: contain;
-    }
-
-    #logoimgcontainer {
-      width: auto;
-      height: auto;
-      max-width: 550px;
-      min-height: 175px;
-      text-align: center;
-      margin: auto auto;
-      position: relative;
-    }
-
-    #logoimgcontainer img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      text-align: center;
-      margin: auto auto;
-      position: relative;
-
-    }
-
-    #topbarimgcontainer {
-      width: auto;
-      height: auto;
-      max-width: 55px;
-      min-height: 55px;
-      padding: 3px;
-      text-align: center;
-      margin: auto auto;
-      position: relative;
-    }
-
-    #topbarimgcontainer img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      text-align: center;
-      margin: auto auto;
-      position: relative;
-
-    }
-
-    .btn {
-      border-radius: 3px;
-      position: relative;
-      align-items: center;
-      justify-content: center;
-      border: 1.5px solid black;
-      padding: 14px 24px;
-      font-size: 18px;
-      background-size: 300%;
-      transition: all 0.6s;
-    }
-
-    .btn:hover {
-      background-position: 100%;
-      transform: translateY(0.5rem);
-    }
-
-    .btn:active {
-      scale: 1.2;
-    }
-
-    .floating {
-      animation-name: floating;
-      animation-duration: 5s;
-      animation-iteration-count: infinite;
-      animation-timing-function: ease-in-out;
-      margin-left: 30px;
-      margin-top: 5px;
-    }
-
-    @keyframes floating {
-      0% {
-        transform: translate(0, 0px);
-      }
-
-      50% {
-        transform: translate(0, 5px) scale(1.01);
-      }
-
-      100% {
-        transform: translate(0, -0px);
-      }
-    }
-
-
-    .flexcontainer {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .flexitem {
-      flex: 1;
-      margin: 0px 15px;
-      width: 16.66%;
-      min-height: 320px;
-    }
-
-
-    .flexitem img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      margin: 0;
-      box-shadow: none;
-    }
-
-    .flexitemlong {
-      flex: 1;
-      margin: 0px 15px;
-      width: 70%;
-    }
-
-    .flexitemlongimgdiv {
-      flex: 1;
-      margin: 0px 15px;
-      width: 30%;
-    }
-
-    .flexitemlongimgdiv img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      margin: 0;
-      box-shadow: none;
-    }
-
-    .longcard {
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      transition: 0.3s;
-      width: 30%;
-      display: flex;
-      flex-direction: row-reverse;
-      overflow: hidden;
-    }
-
-    .longcontainer {
-      padding: 4px 32px;
-      width: 500px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .longcontainer2 {
-      padding: 2px 16px;
-      flex: 1;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      text-align: center;
-      flex-wrap: wrap;
-      gap: 20px 50px;
-    }
-
-    .image-container {
-      flex: 1;
-    }
-
-    .image-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .divider {
-      width: 2px;
-      background-color: #ffffff;
-      margin: 0 20px;
-    }
-
-    .servicecontainer1 {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: stretch;
-      padding-right: 2.5%;
-      padding-left: 2.5%;
-    }
-
-    .servicecontainer2 {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      height: 800px;
-      width: 100%;
-    }
-
-    .founder-img {
-      width: 40%;
-      height: 100%;
-      object-fit: cover;
-      background-color: #ffffff;
-      padding: 2px;
-    }
-
-    .founder-img-container {
-      width: 100%;
-      align-items: center;
-      text-align: center;
-      padding-bottom: 5%;
-    }
-
-    .santo-logo-img {
-      align-items: center;
-      text-align: center;
-      object-fit: cover;
-
-    }
-
-    /*--- General Mobile Styles ---*/
-
-    /* This meta tag is already in your HTML but is crucial for mobile responsiveness. It tells the browser to set the viewport width to the device's screen width and not to scale it. */
-    @media screen and (max-width: 768px) {
-
-      /* Changes font sizes to be a fixed size instead of viewport units, making them readable on smaller screens. */
-      .largetext70 {
-        font-size: 3rem !important;
-        /* using !important to override the inline style */
-      }
-
-      .text24 {
-        font-size: 1rem !important;
-      }
-
-      /* Adjusts padding for mobile screens to give more vertical space and less horizontal. */
-      .center {
-        padding: 10vh 5vw;
-      }
-
-      /*--- Navbar adjustments for mobile ---*/
-
-      .w3-top {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .w3-top a {
-        font-size: 1rem !important;
-      }
-
-      /* Hides the logo in the navbar on mobile to save space. */
-      #topbarimgcontainer {
-        display: block;
-        max-width: 40px;
-        /* Slightly smaller logo for mobile */
-        min-height: 40px;
-        /* Removed order: 2 to respect DOM order (Link - Logo - Link) */
-      }
-
-      #myNavbar {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        /* Spread items out */
-        align-items: center;
-        width: 100%;
-      }
-
-      /* Ensure links take equal space to keep logo centered */
-      #myNavbar a {
-        flex: 1;
-        text-align: center;
-        /* keep text near logo or center of their space */
-      }
-
-      /*--- Main Homepage (Homepage) section ---*/
-
-      #logoimgcontainer img {
-        max-width: 20rem;
-        min-height: 5rem;
-      }
-
-      /* Adjusts the "Get in touch" button for mobile screens. */
-      .btn {
-        padding: 10px 20px;
-        font-size: 16px;
-      }
-
-      /*--- What we do (Services) section ---*/
-
-      /* Changes the flexbox layout to stack items vertically on mobile. */
-      .flexcontainer {
-        flex-direction: column;
-        gap: 20px;
-        /* Adds space between the stacked items */
-      }
-
-      .flexitem {
-        min-height: auto;
-        width: 90%;
-        margin: 0 auto;
-      }
-
-      .longcontainer2 {
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .longcard {
-        flex-direction: column;
-        /* Stacks image and text vertically */
-        width: 100%;
-        margin: 0 auto;
-      }
-
-      .longcontainer {
-        width: 100%;
-        padding: 16px;
-      }
-
-      /* reverses the order for the second catering card to stack logically */
-      .longcard:nth-child(2) {
-        flex-direction: column-reverse;
-      }
-
-      /*--- Who we are (About) section ---*/
-
-      /* Stacks the two columns vertically on mobile and hides the divider. */
-      .servicecontainer1 {
-        flex-direction: column;
-        padding: 0;
-      }
-
-      .divider {
-        display: none;
-      }
-
-      .servicecontainer2 {
-        height: auto;
-        margin-bottom: 30px;
-        /* Adds space between the two sections */
-      }
-
-      .founder-img-container {
-        padding-bottom: 20px;
-      }
-
-      .founder-img {
-        width: 80%;
-      }
-
-      .santo-logo-img {
-        width: 80%;
-      }
-    }
-
-
-    .w3-card {
-      transition: transform 0.3s ease, box-shadow 0.5s ease;
-    }
-
-    .w3-card:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
-    }
-
-    .longcard {
-      transition: transform 0.3s ease, box-shadow 0.5s ease;
-    }
-
-    .longcard:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
-    }
-
-    .selected {
-      border-bottom: 2px solid #000;
-      /* You can change the color and thickness */
-    }
-
-    @media (max-width: 600px) {
-
-      /* Stacks the 'Pop-up' and 'Private Events' cards vertically */
-      .flexcontainer {
-        flex-direction: column;
-      }
-
-      /* Makes each card fill the available width */
-      .longcard {
-        width: 100%;
-        height: auto !important;
-        /* Overrides the inline height to allow content to flow */
-        flex-direction: column;
-        /* Stacks the image and text within the card */
-        margin-bottom: 20px;
-        /* Adds space between the stacked cards */
-      }
-
-      /* Ensures the image takes up a reasonable width on mobile */
-      .image-container img {
-        width: 100%;
-        height: auto;
-      }
-
-      /* Adjusts the text container for stacking */
-      .longcontainer {
-        padding: 10px;
-        text-align: center;
-        /* Centers the text */
-      }
-
-      /* Re-orders the content on smaller screens if needed
-     This example reorders the Private Events card to have text on top of the image */
-      .longcard:nth-of-type(2) {
-        flex-direction: column-reverse;
-      }
-
-      /* Adjust font sizes for better mobile readability */
-      /* Section Headers */
-      h2.text24 {
-        font-size: 2rem !important;
-      }
-
-      /* Sub-headers (Cards) */
-      .text24 h4 {
-        font-size: 1.4rem !important;
-      }
-
-      .text24 p {
-        font-size: 1rem !important;
-      }
-    }
-
-    /* --- Process Roadmap Section --- */
-    .process-step {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 10px;
-      flex: 1;
-      min-width: 130px;
-      /* Reduced to ensure 6 fit in 1000px */
-    }
-
-    .process-icon {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-      color: #000;
-      /* Black icons */
-    }
-
-    /* --- Testimonials Section --- */
-    .testimonial-card {
-      background: #fdfdfd;
-      padding: 20px;
-      border-radius: 8px;
-      border-left: 4px solid #000;
-      margin: 10px;
-      flex: 1;
-      min-width: 250px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    .testimonial-text {
-      font-style: italic;
-      color: #555;
-    }
-
-    /* --- Service Card Details (Hover Reveal) --- */
-    .service-details {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease-out;
-      font-size: 0.9rem;
-      color: #555;
-      text-align: center;
-    }
-
-    /* Reveal on hover of the parent card */
-    .w3-card:hover .service-details,
-    .longcard:hover .service-details {
-      max-height: 100px;
-      /* Adjust as needed */
-      margin-top: 10px;
-    }
-
-    p {
-      font-family: 'Cormorant', serif;
-      font-size: 1.2rem;
-      /* Cormorant runs a bit small, so a slight increase helps */
-      line-height: 1.6;
-    }
-  </style>
-  </style>
 
 </head>
 
@@ -652,55 +98,43 @@
     </div>
   </div>
 
-  <!-- Process Roadmap -->
+  <!-- Our Clients -->
   <div class="w3-container w3-white" style="padding: 16px 16px" id="Process">
-    <h2 class="w3-center text24" style="font-size: 4vh; margin-bottom: 32px;">Your Journey to Success</h2>
+    <h2 class="w3-center text24" style="font-size: 4vh; margin-bottom: 32px;">Trusted by Passionate Founders & Brands
+    </h2>
     <div class="flexcontainer"
-      style="max-width: 1600px; margin: 0 auto; justify-content: space-evenly; flex-wrap: wrap; gap: 20px;">
+      style="max-width: 1600px; margin: 0 auto; justify-content: space-between; flex-wrap: wrap; gap: 25px;">
 
-      <div class="process-step" style="min-width: 150px; text-align: center;">
-        <img src="static/img/Process_1.png" alt="Ideation Icon" style="width: 50px; height: auto; margin-bottom: 15px;">
-        <h4 style="font-family: 'Cormorant', serif; font-size: 1.4rem; margin-top: 10px;">Ideation & Concept</h4>
-        <p>Brand identity, vision board, and concept finalization.</p>
+      <div class="process-step" style="min-width: 130px;">
+        <img src="static/img/Partner_Logo_1.png" style="width: 50%;">
       </div>
 
-      <div class="process-step" style="min-width: 150px;">
-        <img src="static/img/Process_2.png" alt="Business Planning Icon"
-          style="width: 50px; height: auto; margin-bottom: 15px;">
-        <h4 style="font-family: 'Cormorant', serif; font-size: 1.4rem; margin-top: 10px;">Business Planning</h4>
-        <p>Financial modeling, location scouting, and feasibility report.</p>
+      <div class="process-step" style="min-width: 130px;">
+        <img src="static/img/Partner_Logo_2.png" style="width: 50%;">
       </div>
 
-      <div class="process-step" style="min-width: 150px;">
-        <img src="static/img/Process_3_1.png" alt="Kitchen Design Icon"
-          style="width: 50px; height: auto; margin-bottom: 15px;">
-        <h4 style="font-family: 'Cormorant', serif; font-size: 1.4rem; margin-top: 10px;">Kitchen Design</h4>
-        <p>Commercial kitchen layout, planning, and equipment sourcing.</p>
+      <div class="process-step" style="min-width: 130px;">
+        <img src="static/img/Partner_Logo_3.png" style="width: 50%;">
       </div>
 
-      <div class="process-step" style="min-width: 150px;">
-        <img src="static/img/Process_4.png" alt="Menu Development Icon"
-          style="width: 50px; height: auto; margin-bottom: 15px;">
-        <h4 style="font-family: 'Cormorant', serif; font-size: 1.4rem; margin-top: 10px;">Menu Development</h4>
-        <p>Recipe creation, food trials, and cost engineering.</p>
+      <div class="process-step" style="min-width: 130px;">
+        <img src="static/img/Partner_Logo_4.png" style="width: 50%;">
       </div>
 
-      <div class="process-step" style="min-width: 150px;">
-        <img src="static/img/Process_5.png" alt="Staff & Training Icon"
-          style="width: 50px; height: auto; margin-bottom: 15px;">
-        <h4 style="font-family: 'Cormorant', serif; font-size: 1.4rem; margin-top: 10px;">Staff & Training</h4>
-        <p>Hiring key staff, SOP implementation, and service training.</p>
+      <div class="process-step" style="min-width: 130px;">
+        <img src="static/img/Partner_Logo_5.png" style="width: 50%;">
       </div>
 
-      <div class="process-step" style="min-width: 150px;">
-        <img src="static/img/Process_6.png" alt="Grand Launch Icon"
-          style="width: 50px; height: auto; margin-bottom: 15px;">
-        <h4 style="font-family: 'Cormorant', serif; font-size: 1.4rem; margin-top: 10px;">Grand Launch</h4>
-        <p>Marketing strategy, soft launch, and operations handover.</p>
+      <div class="process-step" style="min-width: 130px;">
+        <img src="static/img/Partner_Logo_6.png" style="width: 50%;">
       </div>
+
 
     </div>
   </div>
+
+
+
 
   <!-- what we do -->
   <div class="w3-container w3-white whitebgimg" style="min-height:100dvh;" id="Services">
@@ -907,37 +341,52 @@
     </div>
   </div>
 
-  <!-- Our Clients -->
+  <!-- Process Roadmap -->
   <div class="w3-container w3-white" style="padding: 16px 16px" id="Process">
-    <h2 class="w3-center text24" style="font-size: 4vh; margin-bottom: 32px;">Trusted by Passionate Founders & Brands
-    </h2>
+    <h2 class="w3-center text24" style="font-size: 4vh; margin-bottom: 32px;">Your Journey to Success</h2>
     <div class="flexcontainer"
-      style="max-width: 1600px; margin: 0 auto; justify-content: space-between; flex-wrap: wrap; gap: 25px;">
+      style="max-width: 1600px; margin: 0 auto; justify-content: space-evenly; flex-wrap: wrap; gap: 20px;">
 
-      <div class="process-step" style="min-width: 130px;">
-        <img src="static/img/Partner_Logo_1.png" style="width: 50%;">
+      <div class="process-step" style="min-width: 150px; text-align: center;">
+        <img src="static/img/Process_1.png" alt="Ideation Icon" style="width: 50px; height: auto; margin-bottom: 15px;">
+        <h4 style="font-family: 'Cormorant', serif; font-size: 1.4rem; margin-top: 10px;">Ideation & Concept</h4>
+        <p>Brand identity, vision board, and concept finalization.</p>
       </div>
 
-      <div class="process-step" style="min-width: 130px;">
-        <img src="static/img/Partner_Logo_2.png" style="width: 50%;">
+      <div class="process-step" style="min-width: 150px;">
+        <img src="static/img/Process_2.png" alt="Business Planning Icon"
+          style="width: 50px; height: auto; margin-bottom: 15px;">
+        <h4 style="font-family: 'Cormorant', serif; font-size: 1.4rem; margin-top: 10px;">Business Planning</h4>
+        <p>Financial modeling, location scouting, and feasibility report.</p>
       </div>
 
-      <div class="process-step" style="min-width: 130px;">
-        <img src="static/img/Partner_Logo_3.png" style="width: 50%;">
+      <div class="process-step" style="min-width: 150px;">
+        <img src="static/img/Process_3_1.png" alt="Kitchen Design Icon"
+          style="width: 50px; height: auto; margin-bottom: 15px;">
+        <h4 style="font-family: 'Cormorant', serif; font-size: 1.4rem; margin-top: 10px;">Kitchen Design</h4>
+        <p>Commercial kitchen layout, planning, and equipment sourcing.</p>
       </div>
 
-      <div class="process-step" style="min-width: 130px;">
-        <img src="static/img/Partner_Logo_4.png" style="width: 50%;">
+      <div class="process-step" style="min-width: 150px;">
+        <img src="static/img/Process_4.png" alt="Menu Development Icon"
+          style="width: 50px; height: auto; margin-bottom: 15px;">
+        <h4 style="font-family: 'Cormorant', serif; font-size: 1.4rem; margin-top: 10px;">Menu Development</h4>
+        <p>Recipe creation, food trials, and cost engineering.</p>
       </div>
 
-      <div class="process-step" style="min-width: 130px;">
-        <img src="static/img/Partner_Logo_5.png" style="width: 50%;">
+      <div class="process-step" style="min-width: 150px;">
+        <img src="static/img/Process_5.png" alt="Staff & Training Icon"
+          style="width: 50px; height: auto; margin-bottom: 15px;">
+        <h4 style="font-family: 'Cormorant', serif; font-size: 1.4rem; margin-top: 10px;">Staff & Training</h4>
+        <p>Hiring key staff, SOP implementation, and service training.</p>
       </div>
 
-      <div class="process-step" style="min-width: 130px;">
-        <img src="static/img/Partner_Logo_6.png" style="width: 50%;">
+      <div class="process-step" style="min-width: 150px;">
+        <img src="static/img/Process_6.png" alt="Grand Launch Icon"
+          style="width: 50px; height: auto; margin-bottom: 15px;">
+        <h4 style="font-family: 'Cormorant', serif; font-size: 1.4rem; margin-top: 10px;">Grand Launch</h4>
+        <p>Marketing strategy, soft launch, and operations handover.</p>
       </div>
-
 
     </div>
   </div>

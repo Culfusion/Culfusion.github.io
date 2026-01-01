@@ -1,3 +1,4 @@
+/* === BASE STYLES === */
 body,
 h1,
 h2,
@@ -13,49 +14,56 @@ html {
   height: 100%;
 }
 
-
-.gencenter {
-
-  margin: 0 auto;
-  position: relative;
+/* === FONTS === */
+@font-face {
+  font-family: 'jamal';
+  src: url('../font/Jamel.otf');
 }
 
+@font-face {
+  font-family: 'cormorant';
+  src: url('../font/CormorantInfant-Regular.ttf');
+}
+
+/* === TYPOGRAPHY === */
+.largetext70 {
+  font-family: "jamal";
+  font-size: 4vw;
+  text-align: center;
+}
+
+.text24 {
+  font-family: "cormorant";
+  font-size: 1.25vw;
+  text-align: center;
+}
+
+p {
+  font-family: 'Cormorant', serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* === LAYOUT === */
 .center {
   height: auto;
   margin: 0 auto;
-  padding: 30vh;
+  padding: 12vh;
   position: relative;
 }
 
-.templogobig {
-  height: 90px;
-  width: 200px;
-  margin: auto auto;
-  position: relative;
-
+/* === BACKGROUNDS === */
+.blackbgimg {
+  background-image: url('../img/Black BG small.png');
+  background-repeat: repeat;
 }
 
-/* not in use */
-.newbtton {
-  display: inline-block;
-  width: 100;
-  height: 60;
-  outline: 0;
-  border: 0;
-  cursor: pointer;
-  background: #f6f6f6;
-  color: #000000;
-  border-radius: 3px;
-  padding: 14px 24px;
-  font-size: 18px;
-  line-height: 1;
-  transition: transform 200ms, background 200ms;
-
-  :hover {
-    transform: translateY(-10px);
-  }
+.whitebgimg {
+  background-image: url('../img/White BG small.png');
+  background-repeat: repeat;
 }
 
+/* === BUTTONS === */
 .btn {
   border-radius: 3px;
   position: relative;
@@ -68,7 +76,6 @@ html {
   transition: all 0.6s;
 }
 
-
 .btn:hover {
   background-position: 100%;
   transform: translateY(0.5rem);
@@ -78,7 +85,147 @@ html {
   scale: 1.2;
 }
 
-/* Flip Card Styles */
+/* === ANIMATIONS === */
+.floating {
+  animation-name: floating;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+
+  50% {
+    transform: translate(0, 5px) scale(1.01);
+  }
+
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+
+/* === NAVIGATION === */
+.barimglogo {
+  width: 250;
+  height: 100;
+  object-fit: contain;
+}
+
+#topbarimgcontainer {
+  width: auto;
+  height: auto;
+  max-width: 55px;
+  min-height: 55px;
+  padding: 3px;
+  text-align: center;
+  margin: auto auto;
+  position: relative;
+}
+
+#topbarimgcontainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  text-align: center;
+  margin: auto auto;
+  position: relative;
+}
+
+.selected {
+  border-bottom: 2px solid #000;
+}
+
+/* === LOGO === */
+#logoimgcontainer {
+  width: auto;
+  height: auto;
+  max-width: 550px;
+  min-height: 175px;
+  text-align: center;
+  margin: auto auto;
+  position: relative;
+}
+
+#logoimgcontainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  text-align: center;
+  margin: auto auto;
+  position: relative;
+}
+
+/* === FLEX CONTAINERS === */
+.flexcontainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flexitem {
+  flex: 1;
+  margin: 0px 15px;
+  width: 16.66%;
+  min-height: 320px;
+}
+
+.flexitem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  box-shadow: none;
+}
+
+.flexitemlong {
+  flex: 1;
+  margin: 0px 15px;
+  width: 70%;
+}
+
+.flexitemlongimgdiv {
+  flex: 1;
+  margin: 0px 15px;
+  width: 30%;
+}
+
+.flexitemlongimgdiv img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  box-shadow: none;
+}
+
+/* === CARDS === */
+.w3-card {
+  transition: transform 0.3s ease, box-shadow 0.5s ease;
+}
+
+.w3-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.longcard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.5s ease;
+  width: 30%;
+  display: flex;
+  flex-direction: row-reverse;
+  overflow: hidden;
+}
+
+.longcard:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* === FLIP CARDS === */
 .flip-card-container {
   perspective: 1000px;
 }
@@ -89,10 +236,6 @@ html {
   height: 100%;
   text-align: center;
   transform-style: preserve-3d;
-}
-
-/* Increase specificity to override w3-card transition */
-.flip-card-container .flip-card-inner {
   transition: transform 0.6s, box-shadow 0.5s;
 }
 
@@ -112,7 +255,6 @@ html {
   top: 0;
   left: 0;
   background-color: white;
-  /* Ensure w3-white background */
 }
 
 .flip-card-front {
@@ -130,32 +272,17 @@ html {
   box-sizing: border-box;
 }
 
-.flip-card-back p.text24,
-.flip-card-back ul.text24 {
-  font-size: 1rem !important;
-  /* Smaller text for back of card content only */
-}
-
 .flip-card-front img {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 
-@media screen and (min-width: 769px) {
-  .niche-services-container {
-    justify-content: center !important;
-    /* Override space-between */
-  }
-
-  .niche-services-container .flexitem {
-    flex: 0 0 16.66% !important;
-    /* Fixed width, no grow */
-    max-width: 16.66%;
-  }
+.flip-card-back p.text24,
+.flip-card-back ul.text24 {
+  font-size: 1rem !important;
 }
 
-/* Back of card list formatting */
 .flip-card-back ul.text24 {
   list-style-type: disc;
   padding-left: 20px !important;
@@ -166,11 +293,304 @@ html {
   margin-bottom: 4px;
 }
 
-/* Process step image hover effect */
+/* === CONTAINERS === */
+.longcontainer {
+  padding: 4px 32px;
+  width: 500px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.longcontainer2 {
+  padding: 2px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 20px 50px;
+}
+
+.image-container {
+  flex: 1;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.divider {
+  width: 2px;
+  background-color: #ffffff;
+  margin: 0 20px;
+}
+
+.servicecontainer1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  padding-right: 2.5%;
+  padding-left: 2.5%;
+}
+
+.servicecontainer2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 800px;
+  width: 100%;
+}
+
+/* === IMAGES === */
+.founder-img {
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #ffffff;
+  padding: 2px;
+}
+
+.founder-img-container {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 5%;
+}
+
+.santo-logo-img {
+  align-items: center;
+  text-align: center;
+  object-fit: cover;
+}
+
+/* === PROCESS ROADMAP === */
+.process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  flex: 1;
+  min-width: 130px;
+}
+
 .process-step img {
   transition: transform 0.3s ease;
 }
 
 .process-step img:hover {
   transform: scale(1.3);
+}
+
+.process-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+/* === TESTIMONIALS === */
+.testimonial-card {
+  background: #fdfdfd;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #000;
+  margin: 10px;
+  flex: 1;
+  min-width: 250px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: #555;
+}
+
+/* === SERVICE DETAILS === */
+.service-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+
+.w3-card:hover .service-details,
+.longcard:hover .service-details {
+  max-height: 100px;
+  margin-top: 10px;
+}
+
+/* === RESPONSIVE - TABLET === */
+@media screen and (min-width: 769px) {
+  .niche-services-container {
+    justify-content: center !important;
+  }
+
+  .niche-services-container .flexitem {
+    flex: 0 0 16.66% !important;
+    max-width: 16.66%;
+  }
+}
+
+/* === RESPONSIVE - MOBILE (MAX 768px) === */
+@media screen and (max-width: 768px) {
+  .largetext70 {
+    font-size: 3rem !important;
+  }
+
+  .text24 {
+    font-size: 1rem !important;
+  }
+
+  .center {
+    padding: 10vh 5vw;
+  }
+
+  .w3-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .w3-top a {
+    font-size: 1rem !important;
+  }
+
+  #topbarimgcontainer {
+    display: block;
+    max-width: 40px;
+    min-height: 40px;
+  }
+
+  #myNavbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  #myNavbar a {
+    flex: 1;
+    text-align: center;
+  }
+
+  #logoimgcontainer img {
+    max-width: 20rem;
+    min-height: 5rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .flexcontainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .flexitem {
+    min-height: auto;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .longcontainer2 {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .longcard {
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .longcontainer {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .longcard:nth-child(2) {
+    flex-direction: column-reverse;
+  }
+
+  .servicecontainer1 {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .servicecontainer2 {
+    height: auto;
+    margin-bottom: 30px;
+  }
+
+  .founder-img-container {
+    padding-bottom: 20px;
+  }
+
+  .founder-img {
+    width: 80%;
+  }
+
+  .santo-logo-img {
+    width: 80%;
+  }
+}
+
+/* === RESPONSIVE - MOBILE (MAX 600px) === */
+@media (max-width: 600px) {
+  .flexcontainer {
+    flex-direction: column;
+  }
+
+  .longcard {
+    width: 100%;
+    height: auto !important;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  .longcontainer {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .longcard:nth-of-type(2) {
+    flex-direction: column-reverse;
+  }
+
+  h2.text24 {
+    font-size: 2rem !important;
+  }
+
+  .text24 h4 {
+    font-size: 1.4rem !important;
+  }
+
+  .text24 p {
+    font-size: 1rem !important;
+  }
 }
